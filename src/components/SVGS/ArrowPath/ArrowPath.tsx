@@ -12,7 +12,7 @@ export const ArrowPath: FC<Props> = () => (
       id="Path 2"
       d="M1.32178 1L6.32178 6L1.32178 11"
       stroke="#D87D4A"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </CustomSvgIcon>
 );

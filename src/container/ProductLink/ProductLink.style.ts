@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { CustomLink } from "../CustomLink/CustomLink";
+import { CustomLink } from "../../components/CustomLink/CustomLink";
 import Image from "next/image";
 
 export const StyledProductBox = styled.div`

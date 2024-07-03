@@ -4,6 +4,7 @@ import React, { PropsWithChildren } from "react";
 import { ThemeProvider } from "styled-components";
 import { Navigation } from "../Navigation/Navigation";
 import GlobalStyles from "@/styles/GlobalStyles";
+import { Footer } from "../Footer/Footer";
 
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
@@ -11,6 +12,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
       <GlobalStyles />
       <Navigation />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 };

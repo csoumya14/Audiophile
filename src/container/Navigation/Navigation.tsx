@@ -1,10 +1,10 @@
 "use client";
 import { FC } from "react";
 
-import { Hamburger } from "../SVGS/Hamburger/Hamburger";
+import { Hamburger } from "../../components/SVGS/Hamburger/Hamburger";
 import { Wrapper } from "./Navigation.style";
-import { AudioPhileText } from "../SVGS/AudioPhileText/AudioPhileText";
-import { Cart } from "../SVGS/Cart/Cart";
+import { AudioPhileText } from "../../components/SVGS/AudioPhileText/AudioPhileText";
+import { Cart } from "../../components/SVGS/Cart/Cart";
 
 interface NavigationProps {}
 

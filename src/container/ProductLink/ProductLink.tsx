@@ -6,7 +6,7 @@ import {
   StyledProductBox,
   StyledSpan,
 } from "./ProductLink.style";
-import { ArrowPath } from "../SVGS/ArrowPath/ArrowPath";
+import { ArrowPath } from "../../components/SVGS/ArrowPath/ArrowPath";
 
 interface ProductLinkProps {
   product: string;
