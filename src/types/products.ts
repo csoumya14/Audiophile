@@ -14,6 +14,7 @@ export interface Product {
   others: Other[];
 }
 
+
 export interface ProductCatergory {
   id: number;
   slug: string;
@@ -23,6 +24,18 @@ export interface ProductCatergory {
   new: boolean;
   price: number;
   description: string;
+}
+
+export interface ProductDetails {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  categoryImage: CategoryImage;
+  feature: string;
+  new: boolean;
+  includes: IncludedItem[];
+  gallery: Gallery;
 }
 
 export interface CategoryImage {

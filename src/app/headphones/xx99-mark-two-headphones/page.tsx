@@ -2,18 +2,18 @@
 
 import { FC } from "react";
 import useSWR from "swr";
-import { Container } from "./HeadPhone.style";
 import { HeadingCategory } from "@/container/HeadingCategory/HeadingCategory";
-import { getProductsByCategory } from "@/utils/products";
+import { getProductDetails } from "@/utils/products";
 
 import { ItemCategoryPage } from "@/container/ItemCategoryPage/ItemCategoryPage";
+import { Container } from "./XX99MarkTwoHeadPhone.style";
 
 const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((res) => res.json());
 
 interface HeadPhonePageProps {}
 
-const HeadPhonePage: FC<HeadPhonePageProps> = () => {
+const XX99MarkTwoHeadPhonePage: FC<HeadPhonePageProps> = () => {
   const { data, isLoading, error } = useSWR("/api/products", fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
@@ -21,26 +21,17 @@ const HeadPhonePage: FC<HeadPhonePageProps> = () => {
   if (!data) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading...</div>;
 
-  const categoryData = getProductsByCategory("headphones", data.products);
+  const categoryData = getProductDetails(
+    "xx99-mark-two-headphones",
+    data.products
+  );
   console.log(categoryData);
 
   return (
     <Container>
       <HeadingCategory headingText={"Headphones"} />
-      {categoryData.map((item) => (
-        <ItemCategoryPage
-          key={item.id}
-          product={item.name}
-          category={item.category}
-          slug={item.slug}
-          href={item.slug}
-          img={item.categoryImage.mobile}
-          isNew={item.new}
-          description={item.description}
-        />
-      ))}
     </Container>
   );
 };
 
-export default HeadPhonePage;
+export default XX99MarkTwoHeadPhonePage;

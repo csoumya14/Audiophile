@@ -1,4 +1,4 @@
-import { Product, ProductCatergory } from "@/types/products";
+import { Product, ProductCatergory, ProductDetails } from "@/types/products";
 
 export const getProductsByCategory = (
   category: string,
@@ -19,4 +19,27 @@ export const getProductsByCategory = (
       };
     })
     .sort((a, b) => Number(b.new) - Number(a.new));
+};
+
+export const getProductDetails = (
+  name: string,
+  data: Product[]
+): ProductDetails | null => {
+  let productDetails: ProductDetails | null = null;
+  data.forEach((product) => {
+    if (product.name === name) {
+      productDetails = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        description: product.description,
+        categoryImage: product.categoryImage,
+        feature: product.features,
+        new: product.new,
+        includes: product.includes,
+        gallery: product.gallery,
+      };
+    }
+  });
+  return productDetails;
 };

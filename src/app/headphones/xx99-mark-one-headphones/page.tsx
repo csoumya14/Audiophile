@@ -2,18 +2,18 @@
 
 import { FC } from "react";
 import useSWR from "swr";
-import { Container } from "./HeadPhone.style";
 import { HeadingCategory } from "@/container/HeadingCategory/HeadingCategory";
 import { getProductsByCategory } from "@/utils/products";
 
 import { ItemCategoryPage } from "@/container/ItemCategoryPage/ItemCategoryPage";
+import { Container } from "./XX99MarkOneHeadPhone.style";
 
 const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((res) => res.json());
 
 interface HeadPhonePageProps {}
 
-const HeadPhonePage: FC<HeadPhonePageProps> = () => {
+const XX99MarkOneHeadphonePage: FC<HeadPhonePageProps> = () => {
   const { data, isLoading, error } = useSWR("/api/products", fetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
@@ -43,4 +43,4 @@ const HeadPhonePage: FC<HeadPhonePageProps> = () => {
   );
 };
 
-export default HeadPhonePage;
+export default XX99MarkOneHeadphonePage;
