@@ -27,7 +27,6 @@ export const ItemCategoryPage: FC<ItemCategoryPageProps> = ({
   slug,
   description,
 }) => {
-  console.log({ img });
   return (
     <StyledContainer>
       <StyledImage src={img} width={300} height={300} alt={product} />

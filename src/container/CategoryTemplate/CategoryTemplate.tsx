@@ -1,33 +1,32 @@
 "use client";
-
-import { FC } from "react";
 import useSWR from "swr";
+import { Container } from "./CategoryTemplate.style";
 import { HeadingCategory } from "@/container/HeadingCategory/HeadingCategory";
 import { getProductsByCategory } from "@/utils/products";
 
 import { ItemCategoryPage } from "@/container/ItemCategoryPage/ItemCategoryPage";
-import { Container } from "./XX99MarkOneHeadPhone.style";
+import { ProductLinkList } from "@/container/ProductLinksList/ProductLinksList";
+import { BestGear } from "@/container/BestGear/BestGear";
+import { FC } from "react";
+import { Product } from "@/types/products";
 
 const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((res) => res.json());
 
-interface HeadPhonePageProps {}
+interface CategoryTemplateProps {
+  products: Product[];
+  category: string;
+}
 
-const XX99MarkOneHeadphonePage: FC<HeadPhonePageProps> = () => {
-  const { data, isLoading, error } = useSWR("/api/products", fetcher, {
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
-  });
-  if (!data) return <div>Failed to load</div>;
-  if (isLoading) return <div>Loading...</div>;
-
-  const categoryData = getProductsByCategory("headphones", data.products);
-  console.log(categoryData);
-
+export const CategoryTemplate: FC<CategoryTemplateProps> = ({
+  products,
+  category,
+}) => {
+  console.log(category);
   return (
     <Container>
-      <HeadingCategory headingText={"Headphones"} />
-      {categoryData.map((item) => (
+      <HeadingCategory headingText={category} />
+      {products.map((item) => (
         <ItemCategoryPage
           key={item.id}
           product={item.name}
@@ -39,8 +38,8 @@ const XX99MarkOneHeadphonePage: FC<HeadPhonePageProps> = () => {
           description={item.description}
         />
       ))}
+      <ProductLinkList />
+      <BestGear />
     </Container>
   );
 };
-
-export default XX99MarkOneHeadphonePage;

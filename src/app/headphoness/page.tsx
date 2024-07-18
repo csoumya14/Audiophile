@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import { FC } from "react";
 import useSWR from "swr";
@@ -7,6 +7,8 @@ import { HeadingCategory } from "@/container/HeadingCategory/HeadingCategory";
 import { getProductsByCategory } from "@/utils/products";
 
 import { ItemCategoryPage } from "@/container/ItemCategoryPage/ItemCategoryPage";
+import { ProductLinkList } from "@/container/ProductLinksList/ProductLinksList";
+import { BestGear } from "@/container/BestGear/BestGear";
 
 const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((res) => res.json());
@@ -39,8 +41,11 @@ const HeadPhonePage: FC<HeadPhonePageProps> = () => {
           description={item.description}
         />
       ))}
+      <ProductLinkList />
+      <BestGear />
     </Container>
   );
 };
 
 export default HeadPhonePage;
+ */
