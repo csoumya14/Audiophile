@@ -1,4 +1,4 @@
-import { CategoryTemplate } from "@/container/CategoryTemplate/CategoryTemplate";
+import { CategoryTemplate } from "@/components/Organisms/Templates/CategoryTemplate/CategoryTemplate";
 import { Product } from "@/types/products";
 import path from "path";
 import fs from "fs";

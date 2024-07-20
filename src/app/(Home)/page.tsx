@@ -1,13 +1,13 @@
 "use client";
 
-import { Hero } from "@/container/Hero/Hero";
-import { ProductLinkList } from "@/container/ProductLinksList/ProductLinksList";
+import { Hero } from "@/components/Molecules/Hero/Hero";
+import { ProductLinkList } from "@/components/Molecules/ProductLinksList/ProductLinksList";
 import { FC } from "react";
 import { Container } from "./Home.style";
-import { ZX9Speaker } from "@/container/ZX9Speaker/ZX9Speaker";
-import { ZX7Speaker } from "@/container/ZX7Speaker/ZX7Speaker";
-import { YX1Earphones } from "@/container/YX1Earphones/YX1Earphones";
-import { BestGear } from "@/container/BestGear/BestGear";
+import { ZX9Speaker } from "@/components/Molecules/ZX9Speaker/ZX9Speaker";
+import { ZX7Speaker } from "@/components/Molecules/ZX7Speaker/ZX7Speaker";
+import { YX1Earphones } from "@/components/Molecules/YX1Earphones/YX1Earphones";
+import { BestGear } from "@/components/Molecules/BestGear/BestGear";
 
 interface HomeProps {}
 

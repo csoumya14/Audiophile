@@ -2,6 +2,7 @@ import { FC } from "react";
 import fs from "fs";
 import path from "path";
 import { Product } from "@/types/products";
+import { ProductTemplate } from "@/components/Organisms/Templates/ProductTemplate/ProductTemplate";
 
 interface SubcategoryPageProps {
   params: {
@@ -11,18 +12,6 @@ interface SubcategoryPageProps {
   product: Product | null;
 }
 
-const SubcategoryPage: FC<SubcategoryPageProps> = ({ params, product }) => {
-  if (!product) {
-    return <div>Subcategory not found</div>;
-  }
-
-  return (
-    <div>
-      <h1>Subcategory: {product.name}</h1>
-      <p>{product.description}</p>
-    </div>
-  );
-};
 function readProductsFile(): Product[] {
   const filePath = path.join(process.cwd(), "src/data/products.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
@@ -32,11 +21,15 @@ function readProductsFile(): Product[] {
 async function fetchProduct(category: string, slug: string) {
   const products = readProductsFile();
 
-  return (
-    products.find(
-      (product) => product.slug === slug && product.category === category
-    ) || null
-  );
+  let foundProduct: Product | null = null;
+
+  products.forEach((product) => {
+    if (product.slug === slug && product.category === category) {
+      foundProduct = product;
+    }
+  });
+
+  return foundProduct;
 }
 
 export async function generateStaticParams() {
@@ -55,6 +48,7 @@ export default async function Page({
 }: {
   params: { category: string; subcategory: string };
 }) {
-  const product = await fetchProduct(params.category, params.subcategory);
-  return <SubcategoryPage params={params} product={product} />;
+  const { category, subcategory } = params;
+  const product = await fetchProduct(category, subcategory);
+  return <ProductTemplate subcategory={subcategory} product={product} />;
 }
