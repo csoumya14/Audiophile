@@ -14,7 +14,6 @@ export interface Product {
   others: Other[];
 }
 
-
 export interface ProductCatergory {
   id: number;
   slug: string;
@@ -59,4 +58,11 @@ export interface Other {
   slug: string;
   name: string;
   image: CategoryImage;
+}
+
+export interface CartItem {
+  quantity: number;
+  price: number;
+  name: string;
+  image: string;
 }

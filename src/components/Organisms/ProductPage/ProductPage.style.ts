@@ -16,7 +16,7 @@ export const StyledImage = styled(Image)``;
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
   width: 50%;
-  text-align: center;
+  
 `;
 
 export const StyledPara = styled(Banner)`
@@ -32,6 +32,7 @@ export const StyledSpan = styled.span`
 
 export const StyledPrice = styled.span`
   color: ${(props) => props.theme.palette.neutral.black};
+  font-weight: bold;
 `;
 export const StyledCustomLink = styled(CustomLink)`
   text-align: center;

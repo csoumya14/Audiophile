@@ -25,6 +25,7 @@ export const ProductTemplate: FC<CategoryTemplateProps> = ({ product }) => {
           isNew={product.new}
           description={product.description}
           price={product.price}
+          id={product.id}
           features={product.features}
           includes={product.includes}
           gallery={product.gallery}
