@@ -17,6 +17,8 @@ import {
 } from "@/types/products";
 import { AddToCart } from "@/components/Molecules/AddToCart/AddToCart";
 import { getCart, setCart } from "@/utils/localStorageHelpers";
+import { IncludedItems } from "@/components/Molecules/IncludedItems/IncludedItems";
+import { ProductGallery } from "@/components/Molecules/ProductGallery/ProductGallery";
 
 interface ProductPageProps {
   image: string;
@@ -44,32 +46,7 @@ export const ProductPage: FC<ProductPageProps> = ({
   others,
 }) => {
   const priceValue = price.toLocaleString();
-  /* const [quantity, setQuantity] = useState(1);
-  const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-  const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
-  const handleAddToCart = () => {
-    const cart: CartItem[] = getCart();
-
-    const itemIndex = cart.findIndex((item) => item.name === title);
-
-    if (itemIndex > -1) {
-      cart[itemIndex].quantity += quantity;
-    } else {
-      const newItem: CartItem = {
-        quantity,
-        price: price,
-        name: title,
-        image: image,
-      };
-      cart.push(newItem);
-    }
-
-    setCart(cart);
-    setQuantity(1);
-  }; */
   return (
     <StyledContainer>
       <StyledImage src={image} width={300} height={300} alt={title} />
@@ -80,6 +57,8 @@ export const ProductPage: FC<ProductPageProps> = ({
       <AddToCart price={price} image={image} title={title} />
       <StyledHeading textLevel="h4">Features</StyledHeading>
       <StyledPara textLevel="p">{features}</StyledPara>
+      <IncludedItems includes={includes}/>
+      <ProductGallery gallery={gallery}/>
     </StyledContainer>
   );
 };
