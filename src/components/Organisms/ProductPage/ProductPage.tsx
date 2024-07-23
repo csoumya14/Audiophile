@@ -19,6 +19,7 @@ import { AddToCart } from "@/components/Molecules/AddToCart/AddToCart";
 import { getCart, setCart } from "@/utils/localStorageHelpers";
 import { IncludedItems } from "@/components/Molecules/IncludedItems/IncludedItems";
 import { ProductGallery } from "@/components/Molecules/ProductGallery/ProductGallery";
+import { OtherProducts } from "../OtherProducts/OtherProducts";
 
 interface ProductPageProps {
   image: string;
@@ -59,6 +60,7 @@ export const ProductPage: FC<ProductPageProps> = ({
       <StyledPara textLevel="p">{features}</StyledPara>
       <IncludedItems includes={includes}/>
       <ProductGallery gallery={gallery}/>
+      <OtherProducts other={others}/>
     </StyledContainer>
   );
 };

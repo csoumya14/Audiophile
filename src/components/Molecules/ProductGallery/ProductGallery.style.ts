@@ -19,10 +19,3 @@ export const Container = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
-  display: flex;
-  padding-bottom: 1rem;
-  position: relative;
-  height: 10rem;
-  border-radius: 0.5rem;
-`;

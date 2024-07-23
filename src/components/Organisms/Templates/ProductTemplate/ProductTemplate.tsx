@@ -1,10 +1,12 @@
 "use client";
-import { Container, StyledButton } from "./ProductTemplate.style";
+import { Container, StyledButton, Wrapper } from "./ProductTemplate.style";
 import { FC } from "react";
 import { Product } from "@/types/products";
 import { ProductPage } from "../../ProductPage/ProductPage";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/Atoms/Button/Button";
+import { ProductLinkList } from "@/components/Molecules/ProductLinksList/ProductLinksList";
+import { BestGear } from "@/components/Molecules/BestGear/BestGear";
 
 interface CategoryTemplateProps {
   product: Product | null;
@@ -33,6 +35,10 @@ export const ProductTemplate: FC<CategoryTemplateProps> = ({ product }) => {
           title={product.name}
         />
       )}
+      <Wrapper>
+        <ProductLinkList />
+        <BestGear />
+      </Wrapper>
     </Container>
   );
 };

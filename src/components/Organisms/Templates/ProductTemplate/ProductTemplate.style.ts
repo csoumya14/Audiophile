@@ -14,3 +14,7 @@ export const StyledButton = styled(Button)`
   padding: 1rem;
   color: ${(props) => props.theme.palette.neutral.black};
 `;
+
+export const Wrapper = styled.div`
+  align-self: center;
+`;
