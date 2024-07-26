@@ -25,7 +25,7 @@ export const YX1Earphones: FC<YX1EarphonesProps> = () => {
       </ImageWrapper> 
       <Wrapper>
         <StyledHeading textLevel={"h3"}>YX1 Earphones</StyledHeading>
-        <StyledCustomLink href="">See product</StyledCustomLink>
+        <StyledCustomLink href="/earphones/yx1-earphones">See product</StyledCustomLink>
       </Wrapper>
     </Container>
   );

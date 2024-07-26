@@ -4,9 +4,11 @@ import { Container, StyledProductBox } from "./ProductLinksList.style";
 import { ProductLinks } from "@/components/Molecules/ProductLink/ProductLink";
 import { links } from "@/utils/Links/links";
 
-interface ProductLinkListProps {}
+interface ProductLinkListProps {
+  toggleNav?: () => void;
+}
 
-export const ProductLinkList: FC<ProductLinkListProps> = () => {
+export const ProductLinkList: FC<ProductLinkListProps> = ({toggleNav}) => {
   return (
     <Container>
       {links.slice(1).map((link) => (
@@ -15,6 +17,7 @@ export const ProductLinkList: FC<ProductLinkListProps> = () => {
           img={link.img}
           key={link.id}
           href={link.url}
+          toggleNav={toggleNav}
         />
       ))}
     </Container>

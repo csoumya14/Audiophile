@@ -8,15 +8,13 @@ export const StyledContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 1rem 1rem;
-  gap: 3rem;
+  gap: 2rem;
 `;
 
 export const StyledImage = styled(Image)``;
 
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
-  width: 50%;
-  
 `;
 
 export const StyledPara = styled(Banner)`

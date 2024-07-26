@@ -19,7 +19,7 @@ export const ZX9Speaker: FC<ZX9SpeakerProps> = () => {
         Upgrade to premium speakers that are phenomenally built to deliver truly
         remarkable sound.
       </StyledPara>
-      <StyledCustomLink href="">See product</StyledCustomLink>
+      <StyledCustomLink href="/speakers/zx9-speaker">See product</StyledCustomLink>
     </Container>
   );
 };

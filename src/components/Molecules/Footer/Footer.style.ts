@@ -31,7 +31,7 @@ export const StyledCustomLink = styled(CustomLink)`
 
 export const StyledBanner = styled(Banner)`
   color: ${(props) => props.theme.palette.primary.darkWhiteShade};
-  opacity: 20%;
+  opacity: 30%;
   text-align: center;
 `;
 

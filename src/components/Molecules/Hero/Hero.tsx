@@ -22,7 +22,7 @@ export const Hero: FC<HeroProps> = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </StyledPara>
-        <StyledCustomLink href="">See product</StyledCustomLink>
+        <StyledCustomLink href="/headphones/xx99-mark-two-headphones">See product</StyledCustomLink>
       </TextContainer>
     </Wrapper>
   );
