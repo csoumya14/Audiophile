@@ -5,8 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 3rem 2rem;
   gap: 4rem;
-`;
-
-export const StyledProductBox = styled.div`
-  background-color: ${(props) => props.theme.palette.primary.darkOrange};
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.3rem;
+  }
 `;

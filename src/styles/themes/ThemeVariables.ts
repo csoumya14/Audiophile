@@ -17,28 +17,36 @@ const myTheme: DefaultTheme = {
   },
   fontSizes: {
     heading1: {
-      bigScreen: "56px",
+      tablet: "56px",
+      mobile: "36px",
     },
     heading2: {
-      bigScreen: "40px",
+      tablet: "28px",
+      mobile: "28px",
     },
     heading3: {
-      bigScreen: "32px",
+      tablet: "56px",
+      mobile: "32px",
     },
     heading4: {
-      bigScreen: "28px",
+      tablet: "56px",
+      mobile: "28px",
     },
     heading5: {
-      bigScreen: "24px",
+      tablet: "56px",
+      mobile: "24px",
     },
     heading6: {
-      bigScreen: "18px",
+      tablet: "56px",
+      mobile: "18px",
     },
     overline: {
-      bigScreen: "14px",
+      tablet: "15px",
+      mobile: "15px",
     },
     subTitle: {
-      bigScreen: "13px",
+      tablet: "56px",
+      mobile: "13px",
     },
   },
   lineSpaces: {
@@ -62,6 +70,8 @@ const myTheme: DefaultTheme = {
     },
     overline: {
       bigScreen: "19px",
+      tablet:"25px",
+      mobile:"25px",
     },
     subTitle: {
       bigScreen: "25px",

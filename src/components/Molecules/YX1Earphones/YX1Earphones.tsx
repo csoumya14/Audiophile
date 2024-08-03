@@ -8,20 +8,37 @@ import {
   ImageWrapper,
 } from "./YX1Earphones.style";
 import Image from "next/image";
+import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
 
 interface YX1EarphonesProps {}
+
+const imageSources = [
+  {
+    srcSet: "/images/home/mobile/image-earphones-yx1.jpg",
+    media: "(max-width: 699px)",
+    type: "image/jpeg",
+  },
+  {
+    srcSet: "/images/home/tablet/image-earphones-yx1.jpg",
+    media: "(min-width: 700px)",
+    type: "image/jpeg",
+  },
+  {
+    srcSet: "/images/home/desktop/image-earphones-yx1.jpg",
+    media: "(min-width: 992px)",
+    type: "image/jpeg",
+  },
+];
 
 export const YX1Earphones: FC<YX1EarphonesProps> = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Image
-          src="/images/home/mobile/image-earphones-yx1.jpg"
-          layout="fill"
-          objectFit="cover"
-          style={{borderRadius:"10px"}}
-          alt="speakerZX9"
-        />
+      <ResponsiveImage
+        alt="Responsive Example"
+        sources={imageSources}
+        src="/images/home/mobile/image-earphones-yx1.png"
+      />
       </ImageWrapper> 
       <Wrapper>
         <StyledHeading textLevel={"h3"}>YX1 Earphones</StyledHeading>

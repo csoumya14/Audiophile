@@ -8,7 +8,7 @@ type Props = SvgIconProps & {
 };
 
 export const AudioPhileText: FC<Props> = () => (
-  <CustomSvgIcon viewBox = "0 0 150 20" width="130" height="50" fill="none">
+  <CustomSvgIcon viewBox = "0 20 160 10" width="160" height="50" fill="none">
     <g id="audiophile 2">
       <path
         id="audiophile"

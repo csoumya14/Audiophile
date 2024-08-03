@@ -11,6 +11,9 @@ export const StyledProductBox = styled.div`
   position: relative;
   padding: 1rem 0rem;
   border-radius: 0.5rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    padding: 1rem 4rem;
+  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`

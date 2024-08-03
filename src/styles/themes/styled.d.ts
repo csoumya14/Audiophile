@@ -19,28 +19,36 @@ declare module "styled-components" {
     };
     fontSizes: {
       heading1: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       heading2: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       heading3: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       heading4: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       heading5: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       heading6: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       overline: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       subTitle: {
-        bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
     };
     lineSpaces: {
@@ -64,6 +72,8 @@ declare module "styled-components" {
       };
       overline: {
         bigScreen: string;
+        tablet: string;
+        mobile: string;
       };
       subTitle: {
         bigScreen: string;

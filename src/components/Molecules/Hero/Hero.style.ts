@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import mobileHero from "../../../../public/images/home/mobile/image-header.jpg"
+import mobileHero from "../../../../public/images/home/mobile/image-header.jpg";
+import tabletHero from "../../../../public/images/home/tablet/image-header.jpg";
 import { Banner } from "../../Atoms/Banner/Banner";
 import { CustomLink } from "../../Atoms/CustomLink/CustomLink";
 
@@ -15,6 +16,10 @@ export const Wrapper = styled.div`
   background-position: center center;
   min-width: 100vw;
   min-height: 100vh;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    background-image: url(${tabletHero.src});
+    background-size: contain;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -23,17 +28,24 @@ export const TextContainer = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    padding: 10rem;
+    gap: 1.5rem;
+  }
 `;
 
 export const StyledHeading = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.heading2.bigScreen};
+  font-size: ${(props) => props.theme.fontSizes.heading1.mobile};
   text-transform: uppercase;
   text-align: center;
   color: ${(props) => props.theme.palette.neutral.white};
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+   font-size: ${(props) => props.theme.fontSizes.heading1.tablet};
+  }
 `;
 
 export const StyledPara = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.overline.bigScreen};
+  font-size: ${(props) => props.theme.fontSizes.overline.mobile};
   text-align: center;
   color: ${(props) => props.theme.palette.primary.darkWhiteShade};
   line-height: 25px;

@@ -4,10 +4,14 @@ import patternCircle from "../../../../public/images/home/desktop/pattern-circle
 import { styled } from "styled-components";
 
 export const StyledHeading = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.heading2.bigScreen};
+  font-size: ${(props) => props.theme.fontSizes.heading1.mobile};
   text-transform: uppercase;
   text-align: center;
   color: ${(props) => props.theme.palette.neutral.white};
+  width: 40%;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    font-size: ${(props) => props.theme.fontSizes.heading1.tablet};
+  }
 `;
 
 export const Container = styled.div`
@@ -23,15 +27,23 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+  height: 35rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    height: 50rem;
+    padding: 3rem 1rem;
+  }
 `;
 
 export const StyledPara = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.overline.bigScreen};
+  font-size: ${(props) => props.theme.fontSizes.overline.mobile};
   text-align: center;
   color: ${(props) => props.theme.palette.primary.darkWhiteShade};
-  line-height: 25px;
+  line-height: ${(props) => props.theme.lineSpaces.overline.mobile};
   opacity: 80%;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    width: 60%;
+  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`
@@ -41,4 +53,22 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${(props) => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 1.5rem;
+`;
+
+export const ImageContainer = styled.div`
+  flex: 1;
+  position: relative;
+  width: 50%;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    width: 40%;
+  }
 `;
