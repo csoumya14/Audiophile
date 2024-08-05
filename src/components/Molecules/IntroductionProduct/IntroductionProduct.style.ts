@@ -53,7 +53,7 @@ export const ImageWrapper = styled.div`
   padding-bottom: 1rem;
   position: relative;
   border-radius: 0.5rem;
-  height: fit-content;
+  height: 20rem;
   & img {
     border-radius: 0.5rem;
   }
@@ -61,5 +61,6 @@ export const ImageWrapper = styled.div`
     flex: 1;
     max-width: 100%;
     max-height: 100%;
+    height: auto;
   }
 `;

@@ -3,7 +3,10 @@ import { styled } from "styled-components";
 
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
-  width: 50%;
+  font-size: ${(props) => props.theme.fontSizes.heading3.mobile};
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    font-size: ${(props) => props.theme.fontSizes.heading3.tablet};
+  }
 `;
 // screen reader only
 export const StyledTHead = styled.thead`
@@ -20,6 +23,8 @@ export const StyledTHead = styled.thead`
 export const StyledTable = styled.table`
   border-spacing: 0px;
   padding: 0px;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    padding:0 6rem;
 `;
 
 export const StyledTd = styled.td`
@@ -29,4 +34,15 @@ export const StyledTd = styled.td`
 
 export const StyledTdQuantity = styled(StyledTd)`
   color: ${(props) => props.theme.palette.primary.darkOrange};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;

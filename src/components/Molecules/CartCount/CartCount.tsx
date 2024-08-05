@@ -1,4 +1,3 @@
-// components/CartCount.tsx
 import { Cart } from "@/components/Atoms/SVGs/Cart/Cart";
 import { useCart } from "@/context/CartContext";
 import React, { FC } from "react";

@@ -1,6 +1,13 @@
 import { IncludedItem } from "@/types/products";
 import { FC } from "react";
-import { StyledHeading, StyledTable, StyledTd, StyledTdQuantity, StyledTHead } from "./IncludedItems.style";
+import {
+  Container,
+  StyledHeading,
+  StyledTable,
+  StyledTd,
+  StyledTdQuantity,
+  StyledTHead,
+} from "./IncludedItems.style";
 
 interface IncludedItemsProps {
   includes: IncludedItem[];
@@ -8,8 +15,8 @@ interface IncludedItemsProps {
 
 export const IncludedItems: FC<IncludedItemsProps> = ({ includes }) => {
   return (
-    <>
-      <StyledHeading textLevel="h4">In the box</StyledHeading>
+    <Container>
+      <StyledHeading textLevel="h3">In the box</StyledHeading>
       <StyledTable>
         <StyledTHead>
           <tr>
@@ -26,6 +33,6 @@ export const IncludedItems: FC<IncludedItemsProps> = ({ includes }) => {
           ))}
         </tbody>
       </StyledTable>
-    </>
+    </Container>
   );
 };

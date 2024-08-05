@@ -11,7 +11,7 @@ export const StyledContainer = styled.div`
   gap: 2rem;
 `;
 
-export const StyledImage = styled(Image)``;
+
 
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
