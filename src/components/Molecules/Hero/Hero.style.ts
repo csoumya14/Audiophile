@@ -40,7 +40,7 @@ export const StyledHeading = styled(Banner)`
   text-align: center;
   color: ${(props) => props.theme.palette.neutral.white};
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
-   font-size: ${(props) => props.theme.fontSizes.heading1.tablet};
+    font-size: ${(props) => props.theme.fontSizes.heading1.tablet};
   }
 `;
 
@@ -67,4 +67,5 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${(props) => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 1px;
 `;

@@ -14,8 +14,24 @@ interface CategoryTemplateProps {
 }
 
 export const ProductTemplate: FC<CategoryTemplateProps> = ({ product }) => {
-  console.log({ product });
   const router = useRouter();
+  const imageSources = [
+    {
+      srcSet: product?.categoryImage.mobile,
+      media: "(max-width: 300px)",
+      type: "image/jpeg",
+    },
+    {
+      srcSet: product?.categoryImage.tablet,
+      media: "(min-width: 700px)",
+      type: "image/jpeg",
+    },
+    {
+      srcSet: product?.categoryImage.desktop,
+      media: "(min-width: 992px)",
+      type: "image/jpeg",
+    },
+  ];
   return (
     <Container>
       <StyledButton onClick={() => router.back()} type="button">
@@ -24,6 +40,7 @@ export const ProductTemplate: FC<CategoryTemplateProps> = ({ product }) => {
       {product && (
         <ProductPage
           image={product.categoryImage.mobile}
+          imageSources={imageSources}
           isNew={product.new}
           description={product.description}
           price={product.price}

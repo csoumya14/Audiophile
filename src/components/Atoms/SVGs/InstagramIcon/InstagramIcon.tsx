@@ -7,7 +7,7 @@ type Props = SvgIconProps & {
 };
 
 export const InstagramIcon: FC<Props> = () => (
-  <CustomSvgIcon viewBox="0 0 40 40" width="40" height="40" fill="none">
+  <CustomSvgIcon viewBox="0 -10 40 40" width="40" height="40" fill="none">
     <path
       id="Shape"
       fill-rule="evenodd"

@@ -1,17 +1,6 @@
-import { styled } from "styled-components";
-import Image from "next/image";
 import { Banner } from "@/components/Atoms/Banner/Banner";
 import { CustomLink } from "@/components/Atoms/CustomLink/CustomLink";
-
-export const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem 1rem;
-  gap: 2rem;
-`;
-
-export const StyledImage = styled(Image)``;
+import { styled } from "styled-components";
 
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
@@ -46,4 +35,31 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
+`;
+
+export const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  padding-bottom: 1rem;
+  position: relative;
+  border-radius: 0.5rem;
+  height: fit-content;
+  & img {
+    border-radius: 0.5rem;
+  }
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    flex: 1;
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;

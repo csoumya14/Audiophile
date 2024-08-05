@@ -8,6 +8,7 @@ import {
   StyledCopyrightBanner,
   StyledSocialLinksWrapper,
   StyledSocialCustomLink,
+  CopyrightLinkWrapper,
 } from "./Footer.style";
 import { links } from "@/utils/Links/links";
 import { FacebookIcon } from "@/components/Atoms/SVGs/FacebookIcon/FacebookIcon";
@@ -40,6 +41,7 @@ export const Footer: FC<FooterProps> = () => {
         helping you get the most out of personal audio. Come and visit our demo
         facility - we are open 7 days a week.
       </StyledBanner>
+      <CopyrightLinkWrapper>
       <StyledCopyrightBanner textLevel="p">
         Copyright 2021. All Rights Reserved
       </StyledCopyrightBanner>
@@ -50,6 +52,7 @@ export const Footer: FC<FooterProps> = () => {
           </StyledSocialCustomLink>
         ))}
       </StyledSocialLinksWrapper>
+      </CopyrightLinkWrapper>
     </Wrapper>
   );
 };

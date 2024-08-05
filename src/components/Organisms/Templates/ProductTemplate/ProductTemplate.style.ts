@@ -7,6 +7,9 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 5rem 2rem;
   align-items: flex-start;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    padding-top: 8rem;
+  }
 `;
 
 export const StyledButton = styled(Button)`

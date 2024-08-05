@@ -21,7 +21,7 @@ const myTheme: DefaultTheme = {
       mobile: "36px",
     },
     heading2: {
-      tablet: "28px",
+      tablet: "40px",
       mobile: "28px",
     },
     heading3: {
