@@ -6,7 +6,7 @@ export const Container = styled.div``;
 
 export const StyledCustomLink = styled(CustomLink)`
   text-align: center;
-  padding: 0.5rem ;
+  padding: 0.5rem;
   background-color: ${(props) => props.theme.palette.primary.darkOrange};
   color: ${(props) => props.theme.palette.neutral.white};
   text-decoration: none;
@@ -32,6 +32,9 @@ export const ImageWrapper = styled.div`
   display: flex;
   padding-bottom: 1rem;
   position: relative;
-  height: 8rem;
+  height: 15rem;
   border-radius: 0.5rem;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    height: 20rem;
+  }
 `;

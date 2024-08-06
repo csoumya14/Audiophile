@@ -11,7 +11,7 @@ interface OtherProductsProps {
 export const OtherProducts: FC<OtherProductsProps> = ({ other }) => {
   return (
     <>
-      <StyledHeading textLevel="h4">You may also like</StyledHeading>
+      <StyledHeading textLevel="h3">You may also like</StyledHeading>
       <Container>
         {other?.map((product) => (
           <OtherProductsLinks key={product.slug} productDetails={product} />

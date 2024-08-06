@@ -8,24 +8,30 @@ import {
 import Image from "next/image";
 import { Other } from "@/types/products";
 import { getProductUrl } from "@/helpers/getProductUrl";
+import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
+import { generateImageSources } from "@/helpers/imageHelpers";
 
 interface OtherProductsLinksProps {
   productDetails: Other;
 }
 
+
 export const OtherProductsLinks: FC<OtherProductsLinksProps> = ({
   productDetails,
 }) => {
+  const imageSources = generateImageSources(
+    productDetails.image.mobile,
+    productDetails.image.tablet,
+    productDetails.image.desktop
+  );
+
   return (
     <StyledList>
       <ImageWrapper>
-        <Image
+        <ResponsiveImage
+          alt="Responsive Example"
+          sources={imageSources}
           src={productDetails.image.mobile}
-          layout="fill"
-          objectFit="cover"
-          style={{ borderRadius: "10px" }}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          alt={productDetails.name}
         />
       </ImageWrapper>
       <StyledHeading textLevel={"h3"}>{productDetails.name}</StyledHeading>

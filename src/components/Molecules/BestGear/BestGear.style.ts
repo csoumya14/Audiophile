@@ -23,7 +23,7 @@ export const Container = styled.div`
   padding: 2rem 0rem;
   align-items: center;
   gap: 2rem;
-  height:50rem;
+ height: 70rem;
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
     height: 50rem; 
   }
@@ -39,9 +39,10 @@ export const StyledPara = styled(Banner)`
 `;
 
 export const ImageWrapper = styled.div`
-  flex: 1;
+  flex: 2;
   position: relative;
   width: 100%;
+  height: 100%;
   & img {
     border-radius: 0.5rem;
   }

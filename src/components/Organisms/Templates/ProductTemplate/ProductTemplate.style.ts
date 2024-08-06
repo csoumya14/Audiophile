@@ -20,4 +20,8 @@ export const StyledButton = styled(Button)`
 
 export const Wrapper = styled.div`
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-top: 5rem;
 `;
