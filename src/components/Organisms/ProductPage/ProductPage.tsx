@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
 import { StyledContainer } from "./ProductPage.style";
-import { Gallery, IncludedItem, Other } from "@/types/products";
+import { CategoryImage, Gallery, IncludedItem, Other } from "@/types/products";
 import { IncludedItems } from "@/components/Molecules/IncludedItems/IncludedItems";
 import { ProductGallery } from "@/components/Molecules/ProductGallery/ProductGallery";
 import { OtherProducts } from "../OtherProducts/OtherProducts";
@@ -10,7 +10,7 @@ import { ImageSources } from "@/types/imageSources";
 import { FeaturesProduct } from "@/components/Molecules/FeaturesProduct/FeaturesProduct";
 
 interface ProductPageProps {
-  image: string;
+  image: CategoryImage;
   id: number;
   description: string;
   price: number;
@@ -20,7 +20,7 @@ interface ProductPageProps {
   others: Other[];
   isNew: boolean;
   title: string;
-  imageSources: ImageSources[];
+  shortName:string;
 }
 
 export const ProductPage: FC<ProductPageProps> = ({
@@ -28,22 +28,24 @@ export const ProductPage: FC<ProductPageProps> = ({
   description,
   isNew,
   title,
+  shortName,
   price,
   features,
   includes,
   gallery,
   others,
-  imageSources,
+  id,
 }) => {
   return (
     <StyledContainer>
       <IntroductionProduct
         image={image}
-        imageSources={imageSources}
+        shortName={shortName}
         description={description}
         price={price}
         isNew={isNew}
         title={title}
+        id={id}
       />
       <FeaturesProduct features={features} />
       <IncludedItems includes={includes} />

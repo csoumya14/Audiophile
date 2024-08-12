@@ -13,14 +13,17 @@ import { AddToCart } from "@/components/Molecules/AddToCart/AddToCart";
 import Image from "next/image";
 import { ImageSources } from "@/types/imageSources";
 import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
+import { CategoryImage } from "@/types/products";
+import { generateImageSources } from "@/helpers/imageHelpers";
 
 interface IntroductionProductProps {
-  image: string;
+  image: CategoryImage;
   description: string;
   price: number;
   isNew: boolean;
   title: string;
-  imageSources: ImageSources[];
+  shortName:string;
+  id:number;
 }
 
 export const IntroductionProduct: FC<IntroductionProductProps> = ({
@@ -28,11 +31,16 @@ export const IntroductionProduct: FC<IntroductionProductProps> = ({
   description,
   isNew,
   title,
+  shortName,
   price,
-  imageSources,
+  id,
 }) => {
   const priceValue = price.toLocaleString();
-
+  const imageSources = generateImageSources(
+    image.mobile,
+    image.tablet,
+    image.desktop
+  );
   return (
     <StyledContainer>
       <ImageWrapper>
@@ -47,7 +55,7 @@ export const IntroductionProduct: FC<IntroductionProductProps> = ({
         <StyledHeading textLevel="h2">{title}</StyledHeading>
         <StyledPara textLevel="p">{description}</StyledPara>
         <StyledPrice>$ {priceValue}</StyledPrice>
-        <AddToCart price={price} image={image} title={title} />
+        <AddToCart price={price} image={image.mobile} shortName={shortName} id={id}/>
       </TextWrapper>
     </StyledContainer>
   );

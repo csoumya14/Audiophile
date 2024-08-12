@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   z-index: 10;
   padding: 4rem 2rem;
   gap: 2rem;
+  min-width: 100vw;
   background-color: ${(props) => props.theme.palette.neutral.black};
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
     align-items: flex-start;

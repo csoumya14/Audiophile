@@ -29,3 +29,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const CartButton = styled(Button)`
+  background-color: transparent;
+`;

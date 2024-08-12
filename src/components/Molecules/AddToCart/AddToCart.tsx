@@ -1,6 +1,5 @@
 "use client";
 import { FC, useState } from "react";
-import Image from "next/image";
 import {
   QuantityContainer,
   StyledAddToCartButton,
@@ -9,53 +8,55 @@ import {
 } from "./AddToCart.style";
 import { CartItem } from "@/types/products";
 import { useCart } from "@/context/CartContext";
+import { QuantityAddRemoveButton } from "@/components/Atoms/QuantityAddRemoveButton/QuantityAddRemoveButton";
 
 interface AddToCartProps {
   price: number;
   image: string;
-  title: string;
+  shortName: string;
+  id: number;
 }
 
-export const AddToCart: FC<AddToCartProps> = ({ title, price, image }) => {
+export const AddToCart: FC<AddToCartProps> = ({
+  shortName,
+  price,
+  image,
+  id,
+}) => {
   const [quantity, setQuantity] = useState(1);
-  const { cart, setCartState } = useCart();
+  const { state, addToCart, updateQuantity } = useCart();
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
   const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
   const handleAddToCart = () => {
-    const updatedCart = [...cart];
+    const existingItem = state.cart.find((item) => item.id === id);
 
-    const itemIndex = updatedCart.findIndex((item) => item.name === title);
-
-    if (itemIndex > -1) {
-      updatedCart[itemIndex].quantity += quantity;
+    if (existingItem) {
+      updateQuantity(existingItem.id, existingItem.quantity + quantity);
     } else {
       const newItem: CartItem = {
         quantity,
+        id: id,
         price: price,
-        name: title,
+        shortName: shortName,
         image: image,
       };
-      updatedCart.push(newItem);
+      addToCart(newItem);
     }
 
-    setCartState(updatedCart);
     setQuantity(1);
   };
 
   return (
     <StyledContainer>
-      <QuantityContainer>
-        <StyledButton type="button" onClick={decreaseQuantity}>
-          -
-        </StyledButton>
-        {quantity}
-        <StyledButton onClick={increaseQuantity} type="button">
-          +
-        </StyledButton>
-      </QuantityContainer>
+      <QuantityAddRemoveButton
+        decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
+        quantity={quantity}
+      />
+
       <StyledAddToCartButton type="submit" onClick={handleAddToCart}>
         Add to Cart
       </StyledAddToCartButton>

@@ -2,6 +2,7 @@ export interface Product {
   id: number;
   slug: string;
   name: string;
+  shortName: string;
   image: CategoryImage;
   category: string;
   categoryImage: CategoryImage;
@@ -12,17 +13,6 @@ export interface Product {
   includes: IncludedItem[];
   gallery: Gallery;
   others: Other[];
-}
-
-export interface ProductCatergory {
-  id: number;
-  slug: string;
-  name: string;
-  category: string;
-  categoryImage: CategoryImage;
-  new: boolean;
-  price: number;
-  description: string;
 }
 
 export interface ProductDetails {
@@ -63,6 +53,7 @@ export interface Other {
 export interface CartItem {
   quantity: number;
   price: number;
-  name: string;
+  shortName: string;
   image: string;
+  id: number;
 }

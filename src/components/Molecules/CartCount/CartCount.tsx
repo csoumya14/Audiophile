@@ -6,13 +6,17 @@ import { Container } from "./CartCount.style";
 interface CartCountProps {}
 
 export const CartCount: FC<CartCountProps> = () => {
-  const { cart } = useCart();
-  const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const { state } = useCart();
+  console.log('count',state.cart)
+  const itemCount = state.cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <Container>
       <Cart />
-      {itemCount > 0 && (
+      {state.cart.length > 0 && (
         <span
           style={{
             position: "absolute",

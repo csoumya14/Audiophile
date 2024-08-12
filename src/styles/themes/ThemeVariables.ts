@@ -34,11 +34,11 @@ const myTheme: DefaultTheme = {
     },
     heading5: {
       tablet: "56px",
-      mobile: "24px",
+      mobile: "18px",
     },
     heading6: {
       tablet: "56px",
-      mobile: "18px",
+      mobile: "15px",
     },
     overline: {
       tablet: "15px",

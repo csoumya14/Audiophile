@@ -13,5 +13,8 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  min-width: 100vw;
+  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+    margin-top: 7rem;
+  }
 `;

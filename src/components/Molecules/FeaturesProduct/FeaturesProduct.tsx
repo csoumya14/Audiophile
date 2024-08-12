@@ -1,4 +1,3 @@
-import { useCart } from "@/context/CartContext";
 import React, { FC } from "react";
 import { Container, StyledHeading, StyledPara } from "./FeaturesProduct.style";
 

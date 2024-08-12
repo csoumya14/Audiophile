@@ -1,4 +1,4 @@
-import { Product, ProductCatergory, ProductDetails } from "@/types/products";
+import { Product, ProductDetails } from "@/types/products";
 import path from "path";
 
 let fs: { readFileSync: (arg0: string, arg1: string) => any };
@@ -43,6 +43,7 @@ export const getProductsByCategory = (
         id: product.id,
         slug: product.slug,
         name: product.name,
+        shortName: product.shortName,
         price: product.price,
         description: product.description,
         features: product.features,

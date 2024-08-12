@@ -23,7 +23,7 @@ export const Container = styled.div`
   padding: 2rem 0rem;
   align-items: center;
   gap: 2rem;
- height: 70rem;
+  height: 70rem;
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
     height: 50rem; 
   }

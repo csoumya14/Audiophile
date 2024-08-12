@@ -7,12 +7,17 @@ import {
   StyledImage,
   StyledPara,
   StyledSpan,
+  ImageWrapper,
+  TextWrapper,
 } from "./ItemCategoryPage.style";
+import { generateImageSources } from "@/helpers/imageHelpers";
+import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
+import { CategoryImage } from "@/types/products";
 
 interface ItemCategoryPageProps {
   product: string;
   href: string;
-  img: string;
+  image: CategoryImage;
   isNew: boolean;
   category: string;
   description: string;
@@ -22,20 +27,33 @@ interface ItemCategoryPageProps {
 export const ItemCategoryPage: FC<ItemCategoryPageProps> = ({
   product,
   isNew,
-  img,
+  image,
   category,
   slug,
   description,
 }) => {
+  const imageSources = generateImageSources(
+    image.mobile,
+    image.tablet,
+    image.desktop
+  );
   return (
     <StyledContainer>
-      <StyledImage src={img} width={300} height={300} alt={product} />
-      {isNew && <StyledSpan>New Product</StyledSpan>}
-      <StyledHeading textLevel="h2">{product}</StyledHeading>
-      <StyledPara textLevel="p">{description}</StyledPara>
-      <StyledCustomLink href={`/${category}/${slug}`}>
-        See product
-      </StyledCustomLink>
+      <ImageWrapper>
+        <ResponsiveImage
+          alt="Responsive Example"
+          sources={imageSources}
+          src={imageSources[0].srcSet || ""}
+        />
+      </ImageWrapper>
+      <TextWrapper>
+        {isNew && <StyledSpan>New Product</StyledSpan>}
+        <StyledHeading textLevel="h2">{product}</StyledHeading>
+        <StyledPara textLevel="p">{description}</StyledPara>
+        <StyledCustomLink href={`/${category}/${slug}`}>
+          See product
+        </StyledCustomLink>
+      </TextWrapper>
     </StyledContainer>
   );
 };
