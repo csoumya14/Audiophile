@@ -6,7 +6,6 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
   position: absolute;
   width: 100%;
   background-color: ${(props) => props.theme.palette.neutral.white};
-  /* visibility: ${({ open }) => (open ? "visible" : "hidden")}; */
   z-index: 1001;
   transform: ${({ open }) => (open ? "translate(0)" : "translateY(-150%)")};
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;

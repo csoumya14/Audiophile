@@ -11,7 +11,6 @@ import { AudioPhileText } from "@/components/Atoms/SVGs/AudioPhileText/AudioPhil
 import { CartCount } from "../CartCount/CartCount";
 import { Close } from "@/components/Atoms/SVGs/Close/Close";
 import { NavBar } from "../NavBar/NavBar";
-import { Button } from "@/components/Atoms/Button/Button";
 import { CartModal } from "../CartModal/CartModal";
 
 interface NavigationProps {}
@@ -25,7 +24,7 @@ export const Navigation: FC<NavigationProps> = () => {
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
-  console.log({ isModalOpen });
+
   return (
     <Wrapper>
       <NavBar toggleNav={toggleNav} setOpen={setOpen} open={open} />

@@ -1,5 +1,5 @@
-import { Banner } from "@/components/Atoms/Banner/Banner";
 import { Button } from "@/components/Atoms/Button/Button";
+import { CustomLink } from "@/components/Atoms/CustomLink/CustomLink";
 import { styled } from "styled-components";
 
 export const StyledOverlay = styled.div`
@@ -28,26 +28,11 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const StyledHeading = styled(Banner)`
-  text-transform: uppercase;
-  font-size: ${(props) => props.theme.fontSizes.heading5.mobile};
-`;
-
-export const StyledRemoveButton = styled(Button)`
-  background: transparent;
-  color: ${(props) => props.theme.palette.neutral.black};
-  text-decoration: underline;
-`;
-
-export const StyledCheckoutButton = styled(Button)`
-  text-transform: uppercase;
-  border-radius: 0px;
+export const StyledCustomLink = styled(CustomLink)`
+  text-align: center;
   padding: 0.5rem;
-  letter-spacing: 0.5px;
+  background-color: ${(props) => props.theme.palette.primary.darkOrange};
+  color: ${(props) => props.theme.palette.neutral.white};
+  text-decoration: none;
+  text-transform: uppercase;
 `;

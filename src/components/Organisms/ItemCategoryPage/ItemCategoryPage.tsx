@@ -4,7 +4,6 @@ import {
   StyledCustomLink,
   StyledHeading,
   StyledContainer,
-  StyledImage,
   StyledPara,
   StyledSpan,
   ImageWrapper,

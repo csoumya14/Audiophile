@@ -15,7 +15,7 @@ export const CartCount: FC<CartCountProps> = () => {
 
   return (
     <Container>
-      <Cart />
+      <Cart color="#fff" width="40" height="40" />
       {state.cart.length > 0 && (
         <span
           style={{
