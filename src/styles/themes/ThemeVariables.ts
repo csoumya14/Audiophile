@@ -45,7 +45,7 @@ const myTheme: DefaultTheme = {
       mobile: "15px",
     },
     subTitle: {
-      tablet: "56px",
+      tablet: "13px",
       mobile: "13px",
     },
   },

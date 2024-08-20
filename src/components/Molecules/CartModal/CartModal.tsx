@@ -17,7 +17,11 @@ interface CartModalProps {
 export const CartModal: React.FC<CartModalProps> = ({ setModalOpen }) => {
   const node = useRef<HTMLDivElement>(null);
   useOnClickOutside(node, () => setModalOpen(false));
-  const { state } = useCart();
+  const { state, clearCart } = useCart();
+  const handleClick = () => {
+    setModalOpen(false);
+    clearCart();
+  };
 
   return (
     <>
@@ -28,7 +32,12 @@ export const CartModal: React.FC<CartModalProps> = ({ setModalOpen }) => {
             <CartModalHeadingRemoveButton />
             <CartProductList />
             <CartTotalAmount />
-            <StyledCustomLink href={`/checkout`}>Checkout</StyledCustomLink>
+            <StyledCustomLink
+              onClick={() => setModalOpen(false)}
+              href={`/checkout`}
+            >
+              Checkout
+            </StyledCustomLink>
           </>
         ) : (
           <ModalEmptyCartContent />
