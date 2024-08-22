@@ -3,7 +3,7 @@ import React, {
   } from "react";
   
   export type InputProps = {
-    id: string;
+    id?: string;
     name: string;
     type?: string;
     value?:string;

@@ -5,11 +5,12 @@ import {
   StyledFormContainer,
   StyledHeading,
 } from "./CheckoutForm.style";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { BillingForm } from "@/components/Molecules/BillingForm/BilllingForm";
 import { ShippingForm } from "@/components/Molecules/ShippingForm/ShippingForm";
+import { PaymentForm } from "@/components/Molecules/PaymentForm/PaymentForm";
 
-type Inputs = {
+type FormData = {
   name: string;
   emailAddress: string;
   phoneNumber: string;
@@ -17,6 +18,7 @@ type Inputs = {
   ZIPCode: string;
   city: string;
   country: string;
+  paymentMethod: string;
   eMoneyNumber: number;
   eMoneyPin: number;
 };
@@ -27,24 +29,21 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<Inputs>({
+  } = useForm<FormData>({
     mode: "onBlur",
   });
 
-  const mySubmit = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (!isValid) return;
-    handleSubmit(() => {
-      console.log("submited");
-    })(e);
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log("form data:", data);
   };
 
   return (
     <StyledFormContainer>
       <StyledHeading textLevel="h2">Checkout</StyledHeading>
-      <StyledForm>
-        <BillingForm />
-        <ShippingForm />
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <BillingForm register={register} errors={errors} />
+        <ShippingForm register={register} errors={errors} />
+        <PaymentForm register={register} errors={errors} />
       </StyledForm>
     </StyledFormContainer>
   );

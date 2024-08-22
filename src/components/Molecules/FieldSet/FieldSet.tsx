@@ -3,11 +3,14 @@ import { StyledFieldset, StyledInput, StyledLegend } from "./FieldSet.style";
 import { Field } from "@/components/Atoms/Forms/Field/Field";
 import { UseFormRegister, FieldErrors } from "react-hook-form";
 
+import { CheckBox } from "../Checkbox/Checkbox";
+
 interface FieldConfig {
   id: string;
   label: string;
-  placeholder: string;
+  placeholder?: string;
   type: string;
+  validation?: object;
 }
 
 interface FieldSetProps {
@@ -15,16 +18,19 @@ interface FieldSetProps {
   fields: FieldConfig[];
   register: UseFormRegister<any>;
   errors: FieldErrors;
+  includePaymentMethod?: boolean;
 }
 export const FieldSet: FC<FieldSetProps> = ({
   legend,
   fields,
   register,
   errors,
+  includePaymentMethod,
 }) => {
   return (
     <StyledFieldset>
       <StyledLegend>{legend}</StyledLegend>
+      {includePaymentMethod && <CheckBox register={register} />}
       {fields.map((field) => (
         <Field
           key={field.id}
@@ -33,7 +39,7 @@ export const FieldSet: FC<FieldSetProps> = ({
           error={errors[field.id]}
         >
           <StyledInput
-            {...register(field.id)}
+            {...register(field.id, field.validation)}
             type={field.type}
             placeholder={field.placeholder}
             id={field.id}

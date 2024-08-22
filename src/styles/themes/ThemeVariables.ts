@@ -6,6 +6,7 @@ const myTheme: DefaultTheme = {
       darkOrange: "#d87d4a",
       lightOrange: "hsl(21,94%,75%)",
       darkBlackShade: "hsl(0,0%,6%)",
+      red:"hsl(0, 100%, 50%)",
       grey: "hsl(0,0%,95%)",
       darkWhiteShade: "hsl(0,0%,98%)",
       lightBlue: "hsl(231.2,77.4%,89.6%)",

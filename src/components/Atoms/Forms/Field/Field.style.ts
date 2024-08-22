@@ -13,7 +13,7 @@ export const StyledFieldWrapper = styled.div`
 `;
 
 export const ErrorMessage = styled.small`
-  color: ${(props) => props.theme.palette.primary.darkOrange};
+  color: ${(props) => props.theme.palette.primary.red};
   align-self: flex-start;
   width: 50%;
 `;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { FieldSet } from "../FieldSet/FieldSet";
-import { useForm } from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 const shippingFields = [
   {
@@ -19,20 +19,17 @@ const shippingFields = [
   },
 ];
 
-interface ShippingFormProps {}
-export const ShippingForm: FC<ShippingFormProps> = () => {
-  const {
-    register,
-    formState: { errors },
-  } = useForm();
+interface ShippingFormProps {
+  register: UseFormRegister<any>;
+  errors: FieldErrors;
+}
+export const ShippingForm: FC<ShippingFormProps> = ({ register, errors }) => {
   return (
-    <>
-      <FieldSet
-        legend="Shipping Details"
-        fields={shippingFields}
-        register={register}
-        errors={errors}
-      />
-    </>
+    <FieldSet
+      legend="Shipping Details"
+      fields={shippingFields}
+      register={register}
+      errors={errors}
+    />
   );
 };
