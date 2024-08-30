@@ -14,6 +14,7 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 5rem 1rem;
   align-items: flex-start;
+  background: ${(props) => props.theme.palette.primary.darkWhiteShade};
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
     padding-top: 8rem;
   }

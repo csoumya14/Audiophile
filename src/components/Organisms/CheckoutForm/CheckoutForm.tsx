@@ -1,14 +1,21 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import {
+  InfoWrapper,
+  StyledButton,
   StyledForm,
   StyledFormContainer,
   StyledHeading,
+  SummaryWrapper,
 } from "./CheckoutForm.style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { BillingForm } from "@/components/Molecules/BillingForm/BilllingForm";
 import { ShippingForm } from "@/components/Molecules/ShippingForm/ShippingForm";
 import { PaymentForm } from "@/components/Molecules/PaymentForm/PaymentForm";
+import { CheckoutSummary } from "@/components/Molecules/CheckoutSummary/CheckoutSummary";
+import { Button } from "@/components/Atoms/Button/Button";
+import { CartModal } from "@/components/Molecules/CartModal/CartModal";
+import { CheckoutModal } from "@/components/Molecules/CheckoutModal/CheckoutModal";
 
 type FormData = {
   name: string;
@@ -25,10 +32,15 @@ type FormData = {
 
 interface CheckOutFormProps {}
 export const CheckoutForm: FC<CheckOutFormProps> = () => {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<FormData>({
     mode: "onBlur",
   });
@@ -39,11 +51,20 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
 
   return (
     <StyledFormContainer>
-      <StyledHeading textLevel="h2">Checkout</StyledHeading>
+      {isModalOpen && <CheckoutModal setModalOpen={setModalOpen} />}
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <BillingForm register={register} errors={errors} />
-        <ShippingForm register={register} errors={errors} />
-        <PaymentForm register={register} errors={errors} />
+        <InfoWrapper>
+          <StyledHeading textLevel="h2">Checkout</StyledHeading>
+          <BillingForm register={register} errors={errors} />
+          <ShippingForm register={register} errors={errors} />
+          <PaymentForm register={register} errors={errors} />
+        </InfoWrapper>
+        <SummaryWrapper>
+          <CheckoutSummary />
+          <StyledButton type="submit" onClick={toggleModal}>
+            Continue and pay
+          </StyledButton>
+        </SummaryWrapper>
       </StyledForm>
     </StyledFormContainer>
   );

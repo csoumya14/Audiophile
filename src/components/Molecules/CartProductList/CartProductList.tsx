@@ -10,38 +10,25 @@ import {
   StyledPara,
   StyledProductNamePriceContainer,
 } from "./CartProductList.style";
+import { CartProductListItem } from "../CartProductListItem/CartProductListItem";
 
-interface CartProductListProps {}
+interface CartProductListProps {
+  isSummary?: boolean;
+}
 
-export const CartProductList: React.FC<CartProductListProps> = ({}) => {
-  const { state, updateQuantity } = useCart();
+export const CartProductList: React.FC<CartProductListProps> = ({
+  isSummary,
+}) => {
+  const { state } = useCart();
 
   return (
     <StyledListContainer>
       {state.cart.map((product: CartItem) => (
-        <StyledList key={product.id} >
-          <StyledImage
-            src={product.image}
-            width={80}
-            height={80}
-            alt="Picture of the product"
-          />
-          <StyledProductNamePriceContainer>
-            <StyledName textLevel="h4">{product.shortName}</StyledName>
-            <StyledPara textLevel="p">
-              $ {product.price.toLocaleString()}
-            </StyledPara>
-          </StyledProductNamePriceContainer>
-          <QuantityAddRemoveButton
-            decreaseQuantity={() =>
-              updateQuantity(product.id, product.quantity - 1)
-            }
-            increaseQuantity={() =>
-              updateQuantity(product.id, product.quantity + 1)
-            }
-            quantity={product.quantity}
-          />
-        </StyledList>
+        <CartProductListItem
+          key={product.id}
+          product={product}
+          isSummary={isSummary}
+        />
       ))}
     </StyledListContainer>
   );

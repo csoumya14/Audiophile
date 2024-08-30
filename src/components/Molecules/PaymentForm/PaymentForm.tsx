@@ -14,12 +14,18 @@ const paymentFields = [
     label: "e-Money Number",
     placeholder: "238521993",
     type: "text",
+    validation: {
+      required: "e-Money Number is required",
+    },
   },
   {
     id: "eMoneyPin",
     label: "e-Money PIN",
     placeholder: "6891",
     type: "password",
+    validation: {
+      required: "e-Money pin is required",
+    },
   },
 ];
 

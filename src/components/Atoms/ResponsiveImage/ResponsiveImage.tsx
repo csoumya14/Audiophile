@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import { ImageSources } from "@/types/imageSources";
 import { Picture, StyledImage } from "./ResponsiveImage.style";
 
@@ -26,12 +25,7 @@ export const ResponsiveImage: FC<ResponsiveImageProps> = ({
           type={source.type}
         />
       ))}
-      <StyledImage
-        src={src}
-        alt={alt}
-        layout="fill"
-        objectFit="cover"
-      />
+      <StyledImage src={src} alt={alt} fill style={{ objectFit: "cover" }} />
     </Picture>
   );
 };

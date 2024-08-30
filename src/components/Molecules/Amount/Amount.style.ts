@@ -14,13 +14,16 @@ export const StyledRemoveButton = styled(Button)`
   text-decoration: underline;
 `;
 
-export const StyledPara = styled(Banner)`
+export const StyledPara = styled(Banner)<{ isHighlighted?: boolean }>`
   text-transform: uppercase;
   font-size: ${(props) => props.theme.fontSizes.overline.mobile};
+  padding-top: ${(props) => (props.isHighlighted ? "20px" : "0")};
 `;
 
-export const StyledParaAmount = styled(Banner)`
+export const StyledParaAmount = styled(Banner)<{ isHighlighted?: boolean }>`
   text-transform: uppercase;
   font-size: ${(props) => props.theme.fontSizes.overline.mobile};
   font-weight: bold;
+  color: ${(props) => (props.isHighlighted ? "#d87d4a" : "black")};
+  padding-top: ${(props) => (props.isHighlighted ? "20px" : "0")};
 `;
