@@ -1,5 +1,5 @@
-"use client";
-import { FC, useState } from "react";
+'use client';
+import { FC, useState } from 'react';
 import {
   InfoWrapper,
   StyledButton,
@@ -7,15 +7,15 @@ import {
   StyledFormContainer,
   StyledHeading,
   SummaryWrapper,
-} from "./CheckoutForm.style";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { BillingForm } from "@/components/Molecules/BillingForm/BilllingForm";
-import { ShippingForm } from "@/components/Molecules/ShippingForm/ShippingForm";
-import { PaymentForm } from "@/components/Molecules/PaymentForm/PaymentForm";
-import { CheckoutSummary } from "@/components/Molecules/CheckoutSummary/CheckoutSummary";
-import { Button } from "@/components/Atoms/Button/Button";
-import { CartModal } from "@/components/Molecules/CartModal/CartModal";
-import { CheckoutModal } from "@/components/Molecules/CheckoutModal/CheckoutModal";
+} from './CheckoutForm.style';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { BillingForm } from '@/components/Molecules/BillingForm/BilllingForm';
+import { ShippingForm } from '@/components/Molecules/ShippingForm/ShippingForm';
+import { PaymentForm } from '@/components/Molecules/PaymentForm/PaymentForm';
+import { CheckoutSummary } from '@/components/Molecules/CheckoutSummary/CheckoutSummary';
+import { Button } from '@/components/Atoms/Button/Button';
+import { CartModal } from '@/components/Molecules/CartModal/CartModal';
+import { CheckoutModal } from '@/components/Molecules/CheckoutModal/CheckoutModal';
 
 type FormData = {
   name: string;
@@ -42,11 +42,11 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    mode: "onBlur",
+    mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log("form data:", data);
+  const onSubmit: SubmitHandler<FormData> = data => {
+    console.log('form data:', data);
   };
 
   return (
@@ -54,7 +54,7 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
       {isModalOpen && <CheckoutModal setModalOpen={setModalOpen} />}
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <InfoWrapper>
-          <StyledHeading textLevel="h2">Checkout</StyledHeading>
+          <StyledHeading textLevel="h4">Checkout</StyledHeading>
           <BillingForm register={register} errors={errors} />
           <ShippingForm register={register} errors={errors} />
           <PaymentForm register={register} errors={errors} />

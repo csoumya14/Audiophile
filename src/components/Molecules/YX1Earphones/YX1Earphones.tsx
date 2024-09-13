@@ -7,7 +7,6 @@ import {
   Wrapper,
   ImageWrapper,
 } from "./YX1Earphones.style";
-import Image from "next/image";
 import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
 
 interface YX1EarphonesProps {}

@@ -3,6 +3,7 @@ export const links = [
       id: 1,
       text: 'home',
       url: '/',
+      img:"",
     },
     {
       id: 2,

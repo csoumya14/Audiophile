@@ -19,7 +19,7 @@ export const Container = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: ${(props) => props.theme.palette.neutral.white};
-  padding: 1rem;
+  padding: 2rem;
   zindex: 1000;
   border-radius: 10px;
   width: 90%;
@@ -42,3 +42,46 @@ export const StyledHeading = styled(Banner)`
   font-size: ${(props) => props.theme.fontSizes.heading3.mobile};
   text-transform: uppercase;
 `;
+
+export const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.palette.primary.grey};
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
+
+export const TotalWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.palette.neutral.black};
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+`;
+
+export const Divider = styled.hr`
+  width: 100%;
+  height: 0.1px;
+  margin: 0px 8px;
+  background-color: ${(props) => props.theme.palette.neutral.black};
+  border: none;
+`;
+
+export const StyledHeadingTotal = styled(Banner)`
+  font-size: ${(props) => props.theme.fontSizes.heading6.mobile};
+  color: ${(props) => props.theme.palette.neutral.white};
+  text-transform: uppercase;
+  font-weight: normal;
+`;
+
+export const StyledPara = styled(Banner)`
+  font-weight: bold;
+  color: ${(props) => props.theme.palette.neutral.white};
+`;
+
+export const ProductDetailsContainer = styled.div``;

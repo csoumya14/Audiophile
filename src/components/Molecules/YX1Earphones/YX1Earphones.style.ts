@@ -16,7 +16,6 @@ export const Container = styled.div`
   background: transparent;
   gap: 2rem;
   border-radius: 0.5rem;
-
   @media (min-width: ${(props) => props.theme.mediaSize.md}) {
     flex-direction: row;
     gap: 0.5rem;

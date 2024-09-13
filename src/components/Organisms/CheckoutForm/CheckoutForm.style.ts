@@ -1,10 +1,13 @@
-import { Banner } from "@/components/Atoms/Banner/Banner";
-import { Button } from "@/components/Atoms/Button/Button";
-import { styled } from "styled-components";
+import { Banner } from '@/components/Atoms/Banner/Banner';
+import { Button } from '@/components/Atoms/Button/Button';
+import { styled } from 'styled-components';
 
 export const StyledHeading = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.heading5.mobile};
+  font-size: ${props => props.theme.fontSizes.heading4.mobile};
   text-transform: uppercase;
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
+    font-size: ${props => props.theme.fontSizes.heading4.tablet};
+  }
 `;
 
 export const StyledButton = styled(Button)`
@@ -21,14 +24,14 @@ export const StyledFormContainer = styled.div`
 `;
 
 export const InfoWrapper = styled.div`
-  background-color: ${(props) => props.theme.palette.neutral.white};
+  background-color: ${props => props.theme.palette.neutral.white};
   border-radius: 5px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
-export const SummaryWrapper = styled(InfoWrapper)``
+export const SummaryWrapper = styled(InfoWrapper)``;
 
 export const StyledForm = styled.form`
   width: 100%;

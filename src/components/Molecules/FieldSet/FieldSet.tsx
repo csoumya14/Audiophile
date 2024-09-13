@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { StyledFieldset, StyledInput, StyledLegend } from "./FieldSet.style";
-import { Field } from "@/components/Atoms/Forms/Field/Field";
-import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { FC } from 'react';
+import { StyledFieldset, StyledInput, StyledLegend } from './FieldSet.style';
+import { Field } from '@/components/Atoms/Forms/Field/Field';
+import { UseFormRegister, FieldErrors } from 'react-hook-form';
 
-import { CheckBox } from "../Checkbox/Checkbox";
+import { CheckBox } from '../Checkbox/Checkbox';
 
 interface FieldConfig {
   id: string;
@@ -31,10 +31,11 @@ export const FieldSet: FC<FieldSetProps> = ({
     <StyledFieldset>
       <StyledLegend>{legend}</StyledLegend>
       {includePaymentMethod && <CheckBox register={register} />}
-      {fields.map((field) => (
+      {fields.map(field => (
         <Field
           key={field.id}
           id={field.id}
+          isAddress={field.id === 'address'}
           label={field.label}
           error={errors[field.id]}
         >

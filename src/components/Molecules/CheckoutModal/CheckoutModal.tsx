@@ -1,52 +1,63 @@
-import React, { Dispatch, SetStateAction, useRef } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { useCart } from "@/context/CartContext";
-import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import {
   Container,
+  Divider,
+  ItemWrapper,
+  ProductDetailsContainer,
   StyledCustomLink,
   StyledHeading,
+  StyledHeadingTotal,
   StyledOverlay,
+  StyledPara,
+  TotalWrapper,
 } from "./CheckoutModal.style";
-
 import useCartTotals from "@/hooks/useCartTotals";
 import { SuccessTick } from "@/components/Atoms/SVGs/SuccessTick/SuccessTick";
 import { Banner } from "@/components/Atoms/Banner/Banner";
 import { CartProductListItem } from "../CartProductListItem/CartProductListItem";
-import { CartItem } from "@/types/products";
+import { formatArray } from "@/helpers/formatArray";
 
 interface CheckoutModalProps {
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
+  setModalOpen:  Dispatch<SetStateAction<boolean>>;
 }
 
-export const CheckoutModal: React.FC<CheckoutModalProps> = ({
-  setModalOpen,
-}) => {
-  const node = useRef<HTMLDivElement>(null);
-  useOnClickOutside(node, () => setModalOpen(false));
-  const { state } = useCart();
+export const CheckoutModal: React.FC<CheckoutModalProps> = ({setModalOpen}) => {
+  const { state, clearCart } = useCart();
   const { totalPrice } = useCartTotals();
   const product = state.cart[0];
 
-  const formatArray = (items: CartItem[]) => {
-    if (items.length === 0 || items.length === 1) return "";
-
-    const remainingCount = items.length - 1;
-
-    if (remainingCount > 0) {
-      return ` and ${remainingCount} other item(s)`;
-    }
-  };
+  const displayText = formatArray(state.cart);
+  const handleClick = () => {
+    setModalOpen(false)
+    clearCart()
+  }
 
   return (
     <>
       <StyledOverlay />
-      <Container ref={node}>
+      <Container>
         <SuccessTick width="60" height="60" />
         <StyledHeading textLevel="h3">Thank you for your order</StyledHeading>
         <Banner textLevel="p">
           You will receive an email confirmation shortly
         </Banner>
-        <CartProductListItem product={product} isSummary />
+        <ProductDetailsContainer>
+          <ItemWrapper>
+            <CartProductListItem product={product} isSummary />
+            <Divider />
+            <div>{displayText}</div>
+          </ItemWrapper>
+          <TotalWrapper>
+            <StyledHeadingTotal textLevel="h6">Grandtotal</StyledHeadingTotal>
+            <StyledPara textLevel="p">
+              $ {totalPrice.toLocaleString()}
+            </StyledPara>
+          </TotalWrapper>
+        </ProductDetailsContainer>
+        <StyledCustomLink href="/" onClick={handleClick}>
+          Back to home
+        </StyledCustomLink>
       </Container>
     </>
   );
