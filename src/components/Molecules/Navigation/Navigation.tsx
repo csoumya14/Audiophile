@@ -1,22 +1,21 @@
-"use client";
-import { FC, useState } from "react";
-import { Hamburger } from "../../Atoms/SVGs/Hamburger/Hamburger";
-import {
-  CartButton,
-  Container,
-  StyledOpenCloseButton,
-  Wrapper,
-} from "./Navigation.style";
-import { AudioPhileText } from "@/components/Atoms/SVGs/AudioPhileText/AudioPhileText";
-import { CartCount } from "../CartCount/CartCount";
-import { Close } from "@/components/Atoms/SVGs/Close/Close";
-import { NavBar } from "../NavBar/NavBar";
-import { CartModal } from "../CartModal/CartModal";
+'use client';
+import { FC, useState } from 'react';
+import { Hamburger } from '../../Atoms/SVGs/Hamburger/Hamburger';
+import { CartButton, Container, StyledOpenCloseButton, Wrapper } from './Navigation.style';
+import { AudioPhileText } from '@/components/Atoms/SVGs/AudioPhileText/AudioPhileText';
+import { CartCount } from '../CartCount/CartCount';
+import { Close } from '@/components/Atoms/SVGs/Close/Close';
+import { NavBar } from '../NavBar/NavBar';
+import { CartModal } from '../CartModal/CartModal';
+import { useViewPort } from '@/hooks/customViewPort';
+import { NavLinks } from '../NavLinks/NavLinks';
 
 interface NavigationProps {}
 
 export const Navigation: FC<NavigationProps> = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [width] = useViewPort();
+  console.log(width);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const toggleNav = () => {
     setOpen(!open);
@@ -32,6 +31,7 @@ export const Navigation: FC<NavigationProps> = () => {
         {open ? <Close /> : <Hamburger />}
       </StyledOpenCloseButton>
       <AudioPhileText />
+      {width > 990 && <NavLinks inHeader />}
       <Container>
         {isModalOpen && <CartModal setModalOpen={setModalOpen} />}
         <CartButton type="button" onClick={toggleModal}>

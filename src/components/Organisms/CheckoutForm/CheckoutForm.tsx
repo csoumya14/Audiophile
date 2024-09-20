@@ -13,9 +13,8 @@ import { BillingForm } from '@/components/Molecules/BillingForm/BilllingForm';
 import { ShippingForm } from '@/components/Molecules/ShippingForm/ShippingForm';
 import { PaymentForm } from '@/components/Molecules/PaymentForm/PaymentForm';
 import { CheckoutSummary } from '@/components/Molecules/CheckoutSummary/CheckoutSummary';
-import { Button } from '@/components/Atoms/Button/Button';
-import { CartModal } from '@/components/Molecules/CartModal/CartModal';
 import { CheckoutModal } from '@/components/Molecules/CheckoutModal/CheckoutModal';
+import { useCart } from '@/context/CartContext';
 
 type FormData = {
   name: string;
@@ -33,6 +32,7 @@ type FormData = {
 interface CheckOutFormProps {}
 export const CheckoutForm: FC<CheckOutFormProps> = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const { state } = useCart();
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
@@ -40,7 +40,7 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
   } = useForm<FormData>({
     mode: 'onBlur',
   });
@@ -61,7 +61,7 @@ export const CheckoutForm: FC<CheckOutFormProps> = () => {
         </InfoWrapper>
         <SummaryWrapper>
           <CheckoutSummary />
-          <StyledButton type="submit" onClick={toggleModal}>
+          <StyledButton type="submit" onClick={toggleModal} disabled={!isDirty || !isValid}>
             Continue and pay
           </StyledButton>
         </SummaryWrapper>

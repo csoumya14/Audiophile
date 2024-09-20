@@ -1,6 +1,5 @@
-import { FC } from "react";
-import { CustomSvgIcon, SvgIconProps } from "../CustomSVGIcons/CustomSvgIcons";
-
+import { FC } from 'react';
+import { CustomSvgIcon, SvgIconProps } from '../CustomSVGIcons/CustomSvgIcons';
 
 type Props = SvgIconProps & {
   primaryColor?: ColorGamut;
@@ -8,7 +7,7 @@ type Props = SvgIconProps & {
 };
 
 export const AudioPhileText: FC<Props> = () => (
-  <CustomSvgIcon viewBox = "0 20 160 10" width="160" height="50" fill="none">
+  <CustomSvgIcon viewBox="0 0 200 50" width="200" height="50" fill="none">
     <g id="audiophile 2">
       <path
         id="audiophile"

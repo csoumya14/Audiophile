@@ -1,16 +1,16 @@
-import { Banner } from "@/components/Atoms/Banner/Banner";
-import { styled } from "styled-components";
+import { Banner } from '@/components/Atoms/Banner/Banner';
+import { styled } from 'styled-components';
 
 export const StyledHeading = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.heading2.mobile};
+  font-size: ${props => props.theme.fontSizes.heading2.mobile};
   text-transform: uppercase;
   text-align: center;
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
   & span {
-    color: ${(props) => props.theme.palette.primary.darkOrange};
+    color: ${props => props.theme.palette.primary.darkOrange};
   }
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
-    font-size: ${(props) => props.theme.fontSizes.heading2.tablet};
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
+    font-size: ${props => props.theme.fontSizes.heading2.tablet};
   }
 `;
 
@@ -24,16 +24,16 @@ export const Container = styled.div`
   align-items: center;
   gap: 2rem;
   height: 70rem;
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
     height: 50rem; 
   }
   
 `;
 
 export const StyledPara = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.overline.mobile};
+  font-size: ${props => props.theme.fontSizes.overline.mobile};
   text-align: center;
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
   line-height: 25px;
   opacity: 80%;
 `;
@@ -45,10 +45,6 @@ export const ImageWrapper = styled.div`
   height: 100%;
   & img {
     border-radius: 0.5rem;
-  }
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
-    width: 100%;
-    height: 100%;
   }
 `;
 
