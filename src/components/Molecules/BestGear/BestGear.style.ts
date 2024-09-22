@@ -12,20 +12,29 @@ export const StyledHeading = styled(Banner)`
   @media (min-width: ${props => props.theme.mediaSize.md}) {
     font-size: ${props => props.theme.fontSizes.heading2.tablet};
   }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    text-align: left;
+  }
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows:repeat(2,1fr);
   margin: 1rem 2rem;
   background: transparent
   border-radius: 0.5rem;
   padding: 2rem 0rem;
   align-items: center;
-  gap: 2rem;
-  height: 70rem;
+  height:50rem;
   @media (min-width: ${props => props.theme.mediaSize.md}) {
-    height: 50rem; 
+    height: 45rem; 
+  }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    margin: 1rem 7rem;
+    grid-template-rows:1fr;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-areas: 
+    "b a";
   }
   
 `;
@@ -36,24 +45,32 @@ export const StyledPara = styled(Banner)`
   color: ${props => props.theme.palette.neutral.black};
   line-height: 25px;
   opacity: 80%;
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    text-align: left;
+  }
 `;
 
 export const ImageWrapper = styled.div`
-  flex: 2;
+  flex: 1;
   position: relative;
-  width: 100%;
   height: 100%;
   & img {
     border-radius: 0.5rem;
+  }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    grid-area: a;
   }
 `;
 
 export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    grid-area: b;
+    align-items: flex-start;
+  }
 `;

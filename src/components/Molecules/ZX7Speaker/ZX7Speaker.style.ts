@@ -29,9 +29,11 @@ export const Container = styled.div`
     background-image: url(${speakerImageTablet.src});
     padding-left: 6rem;
   }
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
-    background-image: url(${speakerImageTablet.src});
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    background-image: url(${speakerImageDesktop.src});
     padding-left: 6rem;
+    margin: 1rem 7rem;
+    background-position: 50% 50%;
   }
 `;
 

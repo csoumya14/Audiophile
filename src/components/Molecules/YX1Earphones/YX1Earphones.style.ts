@@ -10,20 +10,20 @@ export const StyledHeading = styled(Banner)`
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
   margin: 1rem 2rem;
   background: transparent;
   gap: 2rem;
   border-radius: 0.5rem;
   @media (min-width: ${props => props.theme.mediaSize.md}) {
-    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-    margin: 1rem 7rem;
   }
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
-    flex-direction: row;
-    gap: 1.5rem;
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    margin: 1rem 7rem;
+    gap: 2rem;
   }
 `;
 
@@ -51,7 +51,6 @@ export const ImageWrapper = styled.div`
   display: flex;
   padding-bottom: 1rem;
   position: relative;
-  height: 15rem;
   border-radius: 0.5rem;
   & img {
     border-radius: 0.5rem;

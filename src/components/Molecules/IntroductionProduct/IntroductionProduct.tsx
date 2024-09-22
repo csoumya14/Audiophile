@@ -1,5 +1,5 @@
-"use client";
-import { FC } from "react";
+'use client';
+import { FC } from 'react';
 import {
   StyledPrice,
   StyledHeading,
@@ -8,13 +8,13 @@ import {
   StyledSpan,
   TextWrapper,
   ImageWrapper,
-} from "./IntroductionProduct.style";
-import { AddToCart } from "@/components/Molecules/AddToCart/AddToCart";
-import Image from "next/image";
-import { ImageSources } from "@/types/imageSources";
-import { ResponsiveImage } from "@/components/Atoms/ResponsiveImage/ResponsiveImage";
-import { CategoryImage } from "@/types/products";
-import { generateImageSources } from "@/helpers/imageHelpers";
+} from './IntroductionProduct.style';
+import { AddToCart } from '@/components/Molecules/AddToCart/AddToCart';
+import Image from 'next/image';
+import { ImageSources } from '@/types/imageSources';
+import { ResponsiveImage } from '@/components/Atoms/ResponsiveImage/ResponsiveImage';
+import { CategoryImage } from '@/types/products';
+import { generateImageSources } from '@/helpers/imageHelpers';
 
 interface IntroductionProductProps {
   image: CategoryImage;
@@ -22,8 +22,8 @@ interface IntroductionProductProps {
   price: number;
   isNew: boolean;
   title: string;
-  shortName:string;
-  id:number;
+  shortName: string;
+  id: number;
 }
 
 export const IntroductionProduct: FC<IntroductionProductProps> = ({
@@ -36,18 +36,16 @@ export const IntroductionProduct: FC<IntroductionProductProps> = ({
   id,
 }) => {
   const priceValue = price.toLocaleString();
-  const imageSources = generateImageSources(
-    image.mobile,
-    image.tablet,
-    image.desktop
-  );
+  const imageSources = generateImageSources(image.mobile, image.tablet, image.desktop);
   return (
     <StyledContainer>
       <ImageWrapper>
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSources}
-          src={imageSources[0].srcSet || ""}
+          width={800}
+          height={600}
+          src={imageSources[0].srcSet || ''}
         />
       </ImageWrapper>
       <TextWrapper>
@@ -55,7 +53,7 @@ export const IntroductionProduct: FC<IntroductionProductProps> = ({
         <StyledHeading textLevel="h2">{title}</StyledHeading>
         <StyledPara textLevel="p">{description}</StyledPara>
         <StyledPrice>$ {priceValue}</StyledPrice>
-        <AddToCart price={price} image={image.mobile} shortName={shortName} id={id}/>
+        <AddToCart price={price} image={image.mobile} shortName={shortName} id={id} />
       </TextWrapper>
     </StyledContainer>
   );
