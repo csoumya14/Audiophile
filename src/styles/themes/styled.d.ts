@@ -1,17 +1,18 @@
-import "styled-components";
+import 'styled-components';
 
 // and extend them!
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     palette: {
       primary: {
         darkOrange: string;
         lightOrange: string;
         darkBlackShade: string;
-        red:string;
+        red: string;
         grey: string;
         darkWhiteShade: string;
         lightBlue: string;
+        lightBlack: string;
       };
       neutral: {
         black: string;

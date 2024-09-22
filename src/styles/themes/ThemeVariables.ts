@@ -10,6 +10,7 @@ const myTheme: DefaultTheme = {
       grey: 'hsl(0,0%,95%)',
       darkWhiteShade: 'hsl(0,0%,98%)',
       lightBlue: 'hsl(231.2,77.4%,89.6%)',
+      lightBlack: '#121212',
     },
     neutral: {
       black: 'hsl(0,0%,0%)',

@@ -1,12 +1,12 @@
-import { Banner } from "@/components/Atoms/Banner/Banner";
-import { CustomLink } from "@/components/Atoms/CustomLink/CustomLink";
-import { styled } from "styled-components";
+import { Banner } from '@/components/Atoms/Banner/Banner';
+import { CustomLink } from '@/components/Atoms/CustomLink/CustomLink';
+import { styled } from 'styled-components';
 
 export const StyledHeading = styled(Banner)`
-  font-size: ${(props) => props.theme.fontSizes.heading2.mobile};
+  font-size: ${props => props.theme.fontSizes.heading2.mobile};
   text-transform: uppercase;
   text-align: center;
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
 `;
 
 export const Container = styled.div`
@@ -16,9 +16,14 @@ export const Container = styled.div`
   background: transparent;
   gap: 2rem;
   border-radius: 0.5rem;
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
     flex-direction: row;
     gap: 0.5rem;
+    margin: 1rem 7rem;
+  }
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
+    flex-direction: row;
+    gap: 1.5rem;
   }
 `;
 
@@ -28,13 +33,17 @@ export const Wrapper = styled.div`
   flex: 1;
   align-items: flex-start;
   gap: 1.5rem;
-  background-color: ${(props) => props.theme.palette.primary.grey};
+  background-color: ${props => props.theme.palette.primary.grey};
   padding: 2rem;
   position: relative;
   border-radius: 0.5rem;
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
     align-items: center;
     justify-content: center;
+  }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    align-items: flex-start;
+    padding-left: 5rem;
   }
 `;
 
@@ -47,7 +56,7 @@ export const ImageWrapper = styled.div`
   & img {
     border-radius: 0.5rem;
   }
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
     flex: 1;
     max-width: 100%;
     max-height: 100%;
@@ -58,7 +67,7 @@ export const StyledCustomLink = styled(CustomLink)`
   text-align: center;
   padding: 1rem 2rem;
   background:transparent
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
   border: 2px solid black;
   text-decoration: none;
   text-transform: uppercase;

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr;
   width: 100vw;
   align-items: center;
-  background-color: ${props => props.theme.palette.neutral.black};
+  background-color: ${props => props.theme.palette.primary.lightBlack};
   min-width: 100vw;
   min-height: 100vh;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
@@ -32,7 +32,7 @@ export const TextContainer = styled.div`
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     position: static;
     align-items: flex-start;
-    padding: 2rem;
+    padding: 5rem;
   }
 `;
 

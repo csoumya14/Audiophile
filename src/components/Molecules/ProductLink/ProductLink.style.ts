@@ -1,9 +1,9 @@
-import { styled } from "styled-components";
-import { CustomLink } from "../../Atoms/CustomLink/CustomLink";
-import Image from "next/image";
+import { styled } from 'styled-components';
+import { CustomLink } from '../../Atoms/CustomLink/CustomLink';
+import Image from 'next/image';
 
 export const StyledProductBox = styled.div`
-  background-color: ${(props) => props.theme.palette.primary.grey};
+  background-color: ${props => props.theme.palette.primary.grey};
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -11,14 +11,11 @@ export const StyledProductBox = styled.div`
   position: relative;
   padding: 1rem 0rem;
   border-radius: 0.5rem;
-  @media (min-width: ${(props) => props.theme.mediaSize.md}) {
-    padding: 1rem 4rem;
-  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`
   text-align: center;
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 13px;
