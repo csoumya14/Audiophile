@@ -1,7 +1,13 @@
 'use client';
 import { FC, useState } from 'react';
 import { Hamburger } from '../../Atoms/SVGs/Hamburger/Hamburger';
-import { CartButton, Container, StyledOpenCloseButton, Wrapper } from './Navigation.style';
+import {
+  CartButton,
+  Container,
+  StyledNavLinks,
+  StyledOpenCloseButton,
+  Wrapper,
+} from './Navigation.style';
 import { AudioPhileText } from '@/components/Atoms/SVGs/AudioPhileText/AudioPhileText';
 import { CartCount } from '../CartCount/CartCount';
 import { Close } from '@/components/Atoms/SVGs/Close/Close';
@@ -31,7 +37,7 @@ export const Navigation: FC<NavigationProps> = () => {
         {open ? <Close /> : <Hamburger />}
       </StyledOpenCloseButton>
       <AudioPhileText />
-      {width > 990 && <NavLinks inHeader />}
+      {width > 990 && <StyledNavLinks inHeader />}
       <Container>
         {isModalOpen && <CartModal setModalOpen={setModalOpen} />}
         <CartButton type="button" onClick={toggleModal}>

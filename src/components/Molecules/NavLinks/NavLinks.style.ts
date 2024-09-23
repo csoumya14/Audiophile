@@ -9,10 +9,6 @@ export const StyledLinkContainer = styled.ul<{ inHeader?: boolean }>`
   @media (min-width: ${props => props.theme.mediaSize.md}) {
     flex-direction: row;
   }
-  @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    flex-direction: row;
-    margin-top: ${props => (props.inHeader ? '-1.5rem' : '0rem')};
-  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`
@@ -21,7 +17,14 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${props => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  &:hover {
+    color: ${props => props.theme.palette.primary.darkOrange};
+  }
   @media (min-width: ${props => props.theme.mediaSize.md}) {
     padding-left: 0rem;
   }
+`;
+
+export const StyledListItem = styled.li<{ inFooter?: boolean }>`
+  text-align: ${props => (props.inFooter ? 'center' : 'left')};
 `;

@@ -28,6 +28,7 @@ export const OtherProductsLinks: FC<OtherProductsLinksProps> = ({ productDetails
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSources}
+          layoutType="responsive"
           src={productDetails.image.mobile}
           width={800}
           height={600}

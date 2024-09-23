@@ -36,6 +36,7 @@ export const ZX9Speaker: FC<ZX9SpeakerProps> = () => {
       <ImageContainer>
         <ResponsiveImage
           alt="Responsive Example"
+          layoutType="responsive"
           sources={imageSources}
           src="/images/home/mobile/image-speaker-zx9.png"
           width={800}

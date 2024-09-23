@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import mobileHero from '../../../../public/images/home/mobile/image-header.jpg';
-import tabletHero from '../../../../public/images/home/tablet/image-header.jpg';
 import { Banner } from '../../Atoms/Banner/Banner';
 import { CustomLink } from '../../Atoms/CustomLink/CustomLink';
 
@@ -76,13 +74,13 @@ export const StyledCustomLink = styled(CustomLink)`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  &:hover {
+    background-color: ${props => props.theme.palette.primary.lightOrange};
+  }
 `;
 
 export const ImageWrapper = styled.div`
-  flex: 2;
   position: relative;
   width: 100%;
   height: 100%;
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
-  }
 `;

@@ -31,8 +31,7 @@ export const BestGear: FC<BestGearProps> = () => {
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSources}
-          width={400}
-          height={800}
+          layoutType="fill"
           src="/images/home/mobile/image-earphones-yx1.png"
         />
       </ImageWrapper>

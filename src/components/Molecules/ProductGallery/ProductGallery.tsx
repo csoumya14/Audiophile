@@ -21,6 +21,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesFirst}
+          layoutType="responsive"
           src={first.mobile}
           width={800}
           height={600}
@@ -30,6 +31,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesSecond}
+          layoutType="responsive"
           src={second.mobile}
           width={800}
           height={600}
@@ -39,6 +41,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesThird}
+          layoutType="responsive"
           src={third.mobile}
           width={800}
           height={600}

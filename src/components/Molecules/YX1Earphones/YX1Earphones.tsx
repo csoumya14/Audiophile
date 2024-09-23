@@ -35,6 +35,7 @@ export const YX1Earphones: FC<YX1EarphonesProps> = () => {
       <ImageWrapper>
         <ResponsiveImage
           alt="Responsive Example"
+          layoutType="responsive"
           sources={imageSources}
           src="/images/home/mobile/image-earphones-yx1.png"
           width={800}

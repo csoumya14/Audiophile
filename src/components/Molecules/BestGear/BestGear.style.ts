@@ -51,7 +51,6 @@ export const StyledPara = styled(Banner)`
 `;
 
 export const ImageWrapper = styled.div`
-  flex: 1;
   position: relative;
   height: 100%;
   & img {
@@ -72,5 +71,6 @@ export const TextWrapper = styled.div`
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     grid-area: b;
     align-items: flex-start;
+    padding-left: 0;
   }
 `;

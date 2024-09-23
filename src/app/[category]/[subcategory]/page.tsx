@@ -1,19 +1,11 @@
-import fs from "fs";
-import path from "path";
-import { Product } from "@/types/products";
-import { ProductTemplate } from "@/components/Organisms/Templates/ProductTemplate/ProductTemplate";
-
-interface SubcategoryPageProps {
-  params: {
-    category: string;
-    subcategory: string;
-  };
-  product: Product | null;
-}
+import fs from 'fs';
+import path from 'path';
+import { Product } from '@/types/products';
+import { ProductTemplate } from '@/components/Organisms/Templates/ProductTemplate/ProductTemplate';
 
 function readProductsFile(): Product[] {
-  const filePath = path.join(process.cwd(), "src/data/products.json");
-  const jsonData = fs.readFileSync(filePath, "utf-8");
+  const filePath = path.join(process.cwd(), 'src/data/products.json');
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(jsonData).products;
 }
 
@@ -22,7 +14,7 @@ async function fetchProduct(category: string, slug: string) {
 
   let foundProduct: Product | null = null;
 
-  products.forEach((product) => {
+  products.forEach(product => {
     if (product.slug === slug && product.category === category) {
       foundProduct = product;
     }
@@ -35,8 +27,8 @@ export async function generateStaticParams() {
   const products = readProductsFile();
 
   return products
-    .filter((product) => product.category)
-    .map((product) => ({
+    .filter(product => product.category)
+    .map(product => ({
       category: product.category,
       subcategory: product.slug,
     }));

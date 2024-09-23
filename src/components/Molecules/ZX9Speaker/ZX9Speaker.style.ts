@@ -67,6 +67,10 @@ export const StyledCustomLink = styled(CustomLink)`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  &:hover {
+    background-color: ${props => props.theme.palette.primary.grey};
+    color: ${props => props.theme.palette.neutral.black};
+  }
 `;
 
 export const TextWrapper = styled.div`

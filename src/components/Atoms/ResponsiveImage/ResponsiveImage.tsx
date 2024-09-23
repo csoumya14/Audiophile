@@ -8,9 +8,17 @@ export type ResponsiveImageProps = {
   src: string;
   width?: number;
   height?: number;
+  layoutType: string;
 };
 
-export const ResponsiveImage: FC<ResponsiveImageProps> = ({ alt, sources, src, width, height }) => {
+export const ResponsiveImage: FC<ResponsiveImageProps> = ({
+  alt,
+  sources,
+  src,
+  width,
+  height,
+  layoutType,
+}) => {
   return (
     <Picture>
       {sources.map((source, index) => (
@@ -19,7 +27,7 @@ export const ResponsiveImage: FC<ResponsiveImageProps> = ({ alt, sources, src, w
       <StyledImage
         src={src}
         alt={alt}
-        layout="responsive"
+        layout={layoutType}
         width={width}
         height={height}
         style={{ objectFit: 'cover' }}

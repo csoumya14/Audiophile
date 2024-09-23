@@ -1,5 +1,6 @@
 import { Button } from '@/components/Atoms/Button/Button';
 import styled from 'styled-components';
+import { NavLinks } from '../NavLinks/NavLinks';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -37,4 +38,8 @@ export const Container = styled.div`
 
 export const CartButton = styled(Button)`
   background: none;
+`;
+
+export const StyledNavLinks = styled(NavLinks)`
+  margin-top: -1.5rem;
 `;

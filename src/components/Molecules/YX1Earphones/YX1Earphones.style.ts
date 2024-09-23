@@ -70,4 +70,8 @@ export const StyledCustomLink = styled(CustomLink)`
   border: 2px solid black;
   text-decoration: none;
   text-transform: uppercase;
+  &:hover {
+    background-color: ${props => props.theme.palette.neutral.black};
+    color: ${props => props.theme.palette.neutral.white};
+  }
 `;
