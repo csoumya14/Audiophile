@@ -42,6 +42,7 @@ export const FieldSet: FC<FieldSetProps> = ({
           <StyledInput
             {...register(field.id, field.validation)}
             type={field.type}
+            error={!!errors[field.id]}
             placeholder={field.placeholder}
             id={field.id}
           />

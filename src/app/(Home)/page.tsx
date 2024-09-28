@@ -1,5 +1,4 @@
 'use client';
-
 import { Hero } from '@/components/Molecules/Hero/Hero';
 import { ProductLinkList } from '@/components/Molecules/ProductLinksList/ProductLinksList';
 import { FC } from 'react';
@@ -11,12 +10,14 @@ interface HomeProps {}
 
 const HomePage: FC<HomeProps> = () => {
   return (
-    <Container>
+    <>
       <Hero />
-      <ProductLinkList />
-      <MainGallery />
-      <BestGear />
-    </Container>
+      <Container>
+        <ProductLinkList />
+        <MainGallery />
+        <BestGear />
+      </Container>
+    </>
   );
 };
 

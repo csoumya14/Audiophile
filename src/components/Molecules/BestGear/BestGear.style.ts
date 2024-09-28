@@ -20,19 +20,15 @@ export const StyledHeading = styled(Banner)`
 export const Container = styled.div`
   display: grid;
   grid-template-rows:repeat(2,1fr);
-  margin: 1rem 2rem;
   background: transparent
   border-radius: 0.5rem;
-  padding: 2rem 0rem;
   align-items: center;
-  height:50rem;
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
-    height: 45rem; 
-  }
+  height:auto;
+  margin-top:3rem;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    margin: 1rem 7rem;
     grid-template-rows:1fr;
     grid-template-columns:repeat(2,1fr);
+    gap:2rem;
     grid-template-areas: 
     "b a";
   }
@@ -67,7 +63,7 @@ export const TextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 2rem 0rem;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     grid-area: b;
     align-items: flex-start;

@@ -31,6 +31,9 @@ export const Container = styled.div`
     max-width: 20rem;
     padding: 2rem;
   }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    top: 50%;
+  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`
@@ -40,4 +43,7 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${props => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  &:hover {
+    background-color: ${props => props.theme.palette.primary.lightOrange};
+  }
 `;

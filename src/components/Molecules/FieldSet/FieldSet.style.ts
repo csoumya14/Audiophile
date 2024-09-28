@@ -2,9 +2,9 @@ import { Input } from '@/components/Atoms/Forms/Input/Input';
 
 import { styled } from 'styled-components';
 
-export const StyledInput = styled(Input)`
+export const StyledInput = styled(Input)<{ error?: boolean }>`
   border: 1px solid;
-  border-color: ${props => props.theme.palette.primary.grey};
+  border-color: ${props => (props.error ? 'red' : '#cfcfcf')};
   border-radius: 5px;
   padding: 1rem;
 `;

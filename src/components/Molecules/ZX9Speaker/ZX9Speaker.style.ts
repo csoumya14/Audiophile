@@ -21,7 +21,6 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
-  margin: 1rem 2rem;
   background: ${props => props.theme.palette.primary.darkOrange};
   background-image: url(${patternCircle.src});
   background-repeat: no-repeat;
@@ -30,18 +29,14 @@ export const Container = styled.div`
   background-attachment: scroll;
   border-radius: 0.5rem;
   padding: 2rem 1rem;
-  gap: 2.5rem;
-  height: 35rem;
+  height: auto;
   @media (min-width: ${props => props.theme.mediaSize.md}) {
-    height: 50rem;
     padding: 3rem 1rem;
   }
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    height: 38rem;
     grid-template-columns: 1fr 0.8fr;
     padding: 3rem 1rem 0rem 1rem;
     grid-template-rows: 1fr;
-    margin: 1rem 7rem;
   }
 `;
 
@@ -77,9 +72,7 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
   gap: 1.5rem;
-
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     align-self: end;
     height: 90%;
@@ -90,14 +83,13 @@ export const TextWrapper = styled.div`
 
 export const ImageContainer = styled.div`
   position: relative;
-  width: 50%;
+  width: 70%;
   height: 100%;
   @media (min-width: ${props => props.theme.mediaSize.md}) {
-    width: 40%;
+    width: 30%;
   }
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    width: 80%;
-    height: 90%;
+    width: 60%;
     align-self: end;
   }
 `;

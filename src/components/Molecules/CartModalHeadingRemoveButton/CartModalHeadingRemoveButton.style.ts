@@ -1,6 +1,6 @@
-import { Banner } from "@/components/Atoms/Banner/Banner";
-import { Button } from "@/components/Atoms/Button/Button";
-import { styled } from "styled-components";
+import { Banner } from '@/components/Atoms/Banner/Banner';
+import { Button } from '@/components/Atoms/Button/Button';
+import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,11 +10,14 @@ export const Wrapper = styled.div`
 
 export const StyledRemoveButton = styled(Button)`
   background: transparent;
-  color: ${(props) => props.theme.palette.neutral.black};
+  color: ${props => props.theme.palette.neutral.black};
   text-decoration: underline;
+  &:hover {
+    color: ${props => props.theme.palette.primary.darkOrange};
+  }
 `;
 
 export const StyledHeading = styled(Banner)`
   text-transform: uppercase;
-  font-size: ${(props) => props.theme.fontSizes.heading5.mobile};
+  font-size: ${props => props.theme.fontSizes.heading5.mobile};
 `;

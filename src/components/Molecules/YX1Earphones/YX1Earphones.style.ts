@@ -12,18 +12,13 @@ export const StyledHeading = styled(Banner)`
 export const Container = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  margin: 1rem 2rem;
   background: transparent;
-  gap: 2rem;
+  gap: 1rem;
   border-radius: 0.5rem;
   @media (min-width: ${props => props.theme.mediaSize.md}) {
     grid-template-rows: 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-  }
-  @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    margin: 1rem 7rem;
-    gap: 2rem;
   }
 `;
 

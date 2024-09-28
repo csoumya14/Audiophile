@@ -14,7 +14,6 @@ import { ShippingForm } from '@/components/Molecules/ShippingForm/ShippingForm';
 import { PaymentForm } from '@/components/Molecules/PaymentForm/PaymentForm';
 import { CheckoutSummary } from '@/components/Molecules/CheckoutSummary/CheckoutSummary';
 import { CheckoutModal } from '@/components/Molecules/CheckoutModal/CheckoutModal';
-import { useCart } from '@/context/CartContext';
 
 type FormData = {
   name: string;
@@ -32,7 +31,6 @@ type FormData = {
 interface CheckOutFormProps {}
 export const CheckoutForm: FC<CheckOutFormProps> = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  const { state } = useCart();
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);

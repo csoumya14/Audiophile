@@ -9,6 +9,15 @@ export type ResponsiveImageProps = {
   width?: number;
   height?: number;
   layoutType: string;
+  objectFitType:
+    | 'contain'
+    | 'cover'
+    | 'fill'
+    | 'none'
+    | 'scale-down'
+    | 'inherit'
+    | 'initial'
+    | 'unset';
 };
 
 export const ResponsiveImage: FC<ResponsiveImageProps> = ({
@@ -18,6 +27,7 @@ export const ResponsiveImage: FC<ResponsiveImageProps> = ({
   width,
   height,
   layoutType,
+  objectFitType,
 }) => {
   return (
     <Picture>
@@ -30,7 +40,7 @@ export const ResponsiveImage: FC<ResponsiveImageProps> = ({
         layout={layoutType}
         width={width}
         height={height}
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: objectFitType }}
       />
     </Picture>
   );

@@ -32,6 +32,7 @@ export const OtherProductsLinks: FC<OtherProductsLinksProps> = ({ productDetails
           src={productDetails.image.mobile}
           width={800}
           height={600}
+          objectFitType={'cover'}
         />
       </ImageWrapper>
       <StyledHeading textLevel={'h3'}>{productDetails.name}</StyledHeading>

@@ -40,6 +40,7 @@ export const ItemCategoryPage: FC<ItemCategoryPageProps> = ({
           layoutType="fill"
           sources={imageSources}
           src={imageSources[0].srcSet || ''}
+          objectFitType={'cover'}
         />
       </ImageWrapper>
       <TextWrapper>

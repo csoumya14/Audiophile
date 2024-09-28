@@ -15,7 +15,6 @@ export const StyledHeading = styled(Banner)`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem 2rem;
   background: ${props => props.theme.palette.primary.grey};
   background-image: url(${speakerImageMobile.src});
   background-repeat: no-repeat;
@@ -32,7 +31,6 @@ export const Container = styled.div`
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     background-image: url(${speakerImageDesktop.src});
     padding-left: 6rem;
-    margin: 1rem 7rem;
     background-position: 50% 50%;
   }
 `;

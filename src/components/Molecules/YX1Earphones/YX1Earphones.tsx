@@ -40,6 +40,7 @@ export const YX1Earphones: FC<YX1EarphonesProps> = () => {
           src="/images/home/mobile/image-earphones-yx1.png"
           width={800}
           height={600}
+          objectFitType={'cover'}
         />
       </ImageWrapper>
       <Wrapper>

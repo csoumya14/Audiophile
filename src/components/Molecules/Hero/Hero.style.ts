@@ -5,10 +5,10 @@ import { CustomLink } from '../../Atoms/CustomLink/CustomLink';
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   width: 100vw;
   align-items: center;
   background-color: ${props => props.theme.palette.primary.lightBlack};
-  min-width: 100vw;
   min-height: 100vh;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     grid-template-columns: 1fr 1fr;
@@ -30,7 +30,6 @@ export const TextContainer = styled.div`
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     position: static;
     align-items: flex-start;
-    padding: 5rem;
   }
 `;
 

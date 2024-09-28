@@ -118,7 +118,7 @@ export const StyledNavLinks = styled(NavLinks)`
   & li {
     text-align: center;
   }
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
     justify-self: end;
   }
 `;

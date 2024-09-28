@@ -21,30 +21,27 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesFirst}
-          layoutType="responsive"
+          layoutType="fill"
           src={first.mobile}
-          width={800}
-          height={600}
+          objectFitType={'cover'}
         />
       </ImageContainer>
       <ImageContainer>
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesSecond}
-          layoutType="responsive"
+          layoutType="fill"
           src={second.mobile}
-          width={800}
-          height={600}
+          objectFitType={'cover'}
         />
       </ImageContainer>
       <ImageContainer>
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSourcesThird}
-          layoutType="responsive"
+          layoutType="fill"
           src={third.mobile}
-          width={800}
-          height={600}
+          objectFitType={'cover'}
         />
       </ImageContainer>
     </Container>

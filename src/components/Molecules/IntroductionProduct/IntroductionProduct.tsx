@@ -43,10 +43,9 @@ export const IntroductionProduct: FC<IntroductionProductProps> = ({
         <ResponsiveImage
           alt="Responsive Example"
           sources={imageSources}
-          layoutType="responsive"
-          width={800}
-          height={600}
+          layoutType="fill"
           src={imageSources[0].srcSet || ''}
+          objectFitType={'cover'}
         />
       </ImageWrapper>
       <TextWrapper>

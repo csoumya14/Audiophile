@@ -22,6 +22,10 @@ export const StyledCustomLink = styled(CustomLink)`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+
+  &:hover {
+    color: ${props => props.theme.palette.primary.darkOrange};
+  }
 `;
 
 export const StyledSpan = styled.span`

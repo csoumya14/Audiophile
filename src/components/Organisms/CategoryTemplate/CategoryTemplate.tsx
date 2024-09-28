@@ -14,22 +14,24 @@ interface CategoryTemplateProps {
 
 export const CategoryTemplate: FC<CategoryTemplateProps> = ({ products, category }) => {
   return (
-    <Container>
+    <>
       <HeadingCategory headingText={category} />
-      {products.map(item => (
-        <ItemCategoryPage
-          key={item.id}
-          product={item.name}
-          category={item.category}
-          slug={item.slug}
-          href={item.slug}
-          image={item.categoryImage}
-          isNew={item.new}
-          description={item.description}
-        />
-      ))}
-      <ProductLinkList />
-      <BestGear />
-    </Container>
+      <Container>
+        {products.map(item => (
+          <ItemCategoryPage
+            key={item.id}
+            product={item.name}
+            category={item.category}
+            slug={item.slug}
+            href={item.slug}
+            image={item.categoryImage}
+            isNew={item.new}
+            description={item.description}
+          />
+        ))}
+        <ProductLinkList />
+        <BestGear />
+      </Container>
+    </>
   );
 };

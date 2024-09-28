@@ -1,4 +1,4 @@
-import { CheckoutTemplate } from "@/components/Organisms/Templates/CheckoutTemplate/CheckoutTemplate";
+import { CheckoutTemplate } from '@/components/Organisms/CheckoutTemplate/CheckoutTemplate';
 
 export default async function Page() {
   return <CheckoutTemplate />;

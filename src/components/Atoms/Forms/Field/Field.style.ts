@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledLabel = styled.label`
-  color: ${props => props.theme.palette.neutral.black};
+export const StyledLabel = styled.label<{ errorFound?: boolean }>`
+  color: ${props => (props.errorFound ? 'red' : 'black')};
   font-size: 12px;
   font-weight: bold;
 `;
@@ -17,6 +17,11 @@ export const StyledFieldWrapper = styled.div<{ isAddress?: boolean }>`
 
 export const ErrorMessage = styled.small`
   color: ${props => props.theme.palette.primary.red};
-  align-self: flex-start;
-  width: 50%;
+`;
+
+export const LabelErrorWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 `;

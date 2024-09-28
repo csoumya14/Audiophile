@@ -41,6 +41,7 @@ export const ZX9Speaker: FC<ZX9SpeakerProps> = () => {
           src="/images/home/mobile/image-speaker-zx9.png"
           width={800}
           height={600}
+          objectFitType={'cover'}
         />
       </ImageContainer>
       <TextWrapper>
