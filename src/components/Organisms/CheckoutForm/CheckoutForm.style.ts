@@ -13,6 +13,9 @@ export const StyledHeading = styled(Banner)`
 export const StyledButton = styled(Button)`
   padding: 1rem;
   text-transform: uppercase;
+  &:hover {
+    background: ${props => props.theme.palette.primary.lightOrange};
+  }
 `;
 
 export const StyledFormContainer = styled.div`
@@ -35,7 +38,12 @@ export const SummaryWrapper = styled(InfoWrapper)``;
 
 export const StyledForm = styled.form`
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr;
   gap: 2rem;
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 0.5fr;
+  }
 `;

@@ -48,7 +48,7 @@ export const Hero: FC<HeroProps> = () => {
           sources={imageSources}
           layoutType="fill"
           src="/images/home/mobile/image-headers.png"
-          objectFitType={'cover'}
+          objectFitType={'contain'}
         />
       </ImageWrapper>
     </Wrapper>

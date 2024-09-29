@@ -5,7 +5,6 @@ import {
   StyledHeading,
   StyledList,
 } from './OtherProductLinks.style';
-import Image from 'next/image';
 import { Other } from '@/types/products';
 import { getProductUrl } from '@/helpers/getProductUrl';
 import { ResponsiveImage } from '@/components/Atoms/ResponsiveImage/ResponsiveImage';

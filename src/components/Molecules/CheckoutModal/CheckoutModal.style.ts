@@ -30,6 +30,12 @@ export const Container = styled.div`
     gap: 2rem;
     padding: 3rem;
   }
+  @media (min-width: ${props => props.theme.mediaSize.lg}) {
+    padding: 1rem;
+    gap: 0.5rem;
+    width: 50%;
+    top: 40%;
+  }
 `;
 
 export const StyledCustomLink = styled(CustomLink)`
@@ -39,6 +45,9 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${props => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  &:hover {
+    background-color: ${props => props.theme.palette.primary.lightOrange};
+  }
 `;
 
 export const StyledHeading = styled(Banner)`

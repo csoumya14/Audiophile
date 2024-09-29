@@ -8,10 +8,12 @@ export const Wrapper = styled.div`
   grid-template-rows: 1fr;
   width: 100vw;
   align-items: center;
+  justify-items: center;
+  border: 1px solid red;
   background-color: ${props => props.theme.palette.primary.lightBlack};
-  min-height: 100vh;
+  min-height: 80vh;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
   }
 `;
 
@@ -22,13 +24,13 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  @media (min-width: ${props => props.theme.mediaSize.md}) {
-    padding: 10rem;
+  padding: 1rem @media (min-width: ${props => props.theme.mediaSize.md}) {
     gap: 1.5rem;
+    padding: 2rem;
   }
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     position: static;
+    padding: 5rem;
     align-items: flex-start;
   }
 `;
