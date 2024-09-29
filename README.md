@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution URL](https://github.com/csoumya14/Audiophile.git)
-- Live Site URL: [live site URL](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://your-live-site-url.com](https://audiophile-ecc.vercel.app/))
 
 ### Setup
 
