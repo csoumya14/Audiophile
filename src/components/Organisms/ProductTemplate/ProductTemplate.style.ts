@@ -12,6 +12,9 @@ export const Container = styled.div`
   @media (min-width: ${props => props.theme.mediaSize.md}) {
     padding: 8rem 2rem 1rem 2rem;
   }
+  @media (min-width: ${props => props.theme.mediaSize.md}) {
+    padding: 8rem 5rem 1rem 5rem;
+  }
 `;
 
 export const StyledButton = styled(Button)`
