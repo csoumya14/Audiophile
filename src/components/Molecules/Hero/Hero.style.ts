@@ -30,7 +30,7 @@ export const TextContainer = styled.div`
   }
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     position: static;
-    padding: 5rem;
+    padding: 8rem 5rem;
     align-items: flex-start;
   }
 `;
