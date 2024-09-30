@@ -13,9 +13,9 @@ interface FieldProps {
 export const Field: FC<FieldProps> = ({ children, isAddress, label, error, id }) => {
   const errorFound = !!error;
   return (
-    <StyledFieldWrapper isAddress={isAddress}>
+    <StyledFieldWrapper $isAddress={isAddress}>
       <LabelErrorWrapper>
-        <StyledLabel htmlFor={id} errorFound={errorFound}>
+        <StyledLabel htmlFor={id} $errorFound={errorFound}>
           {label}
         </StyledLabel>
         {error && <ErrorMessage>{error.message?.toString()}</ErrorMessage>}

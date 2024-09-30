@@ -13,6 +13,7 @@ declare module 'styled-components' {
         darkWhiteShade: string;
         lightBlue: string;
         lightBlack: string;
+        mediumBlack: string;
       };
       neutral: {
         black: string;

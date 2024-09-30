@@ -32,6 +32,7 @@ export const BestGear: FC<BestGearProps> = () => {
           alt="Responsive Example"
           sources={imageSources}
           layoutType="fill"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           src="/images/shared/mobile/image-best-gear.png"
           objectFitType={'cover'}
         />

@@ -47,6 +47,7 @@ export const Hero: FC<HeroProps> = () => {
           alt="Responsive Example"
           sources={imageSources}
           layoutType="fill"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           src="/images/home/mobile/image-headers.png"
           objectFitType={'contain'}
         />

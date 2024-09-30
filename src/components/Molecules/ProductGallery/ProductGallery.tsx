@@ -24,6 +24,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
           layoutType="fill"
           src={first.mobile}
           objectFitType={'cover'}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </ImageContainer>
       <ImageContainer>
@@ -33,6 +34,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
           layoutType="fill"
           src={second.mobile}
           objectFitType={'cover'}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </ImageContainer>
       <ImageContainer>
@@ -42,6 +44,7 @@ export const ProductGallery: FC<ProductGalleryProps> = ({ gallery }) => {
           layoutType="fill"
           src={third.mobile}
           objectFitType={'cover'}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </ImageContainer>
     </Container>

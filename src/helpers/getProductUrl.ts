@@ -1,6 +1,5 @@
 export const getProductUrl = (slug: string): string => {
   const lowerCaseName = slug.toLowerCase();
-  console.log({ slug });
 
   const headerRegex = /\bheadphones?\b/;
   const speakerRegex = /\bspeakers?\b/;
@@ -13,6 +12,6 @@ export const getProductUrl = (slug: string): string => {
   } else if (earphoneRegex.test(lowerCaseName)) {
     return `/earphones/${slug}`;
   } else {
-    return "/"; // default case if none of the keywords are found
+    return '/'; // default case if none of the keywords are found
   }
 };

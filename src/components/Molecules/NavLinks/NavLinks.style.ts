@@ -1,7 +1,7 @@
 import { CustomLink } from '@/components/Atoms/CustomLink/CustomLink';
 import { styled } from 'styled-components';
 
-export const StyledLinkContainer = styled.ul<{ inHeader?: boolean }>`
+export const StyledLinkContainer = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -17,6 +17,9 @@ export const StyledCustomLink = styled(CustomLink)`
   color: ${props => props.theme.palette.neutral.white};
   text-decoration: none;
   text-transform: uppercase;
+  &[aria-current='page'] {
+    color: ${props => props.theme.palette.primary.darkOrange};
+  }
   &:hover {
     color: ${props => props.theme.palette.primary.darkOrange};
   }

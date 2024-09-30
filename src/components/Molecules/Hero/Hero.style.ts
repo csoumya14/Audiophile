@@ -9,8 +9,7 @@ export const Wrapper = styled.div`
   width: 100vw;
   align-items: center;
   justify-items: center;
-  border: 1px solid red;
-  background-color: ${props => props.theme.palette.primary.lightBlack};
+  background-color: ${props => props.theme.palette.primary.mediumBlack};
   min-height: 80vh;
   @media (min-width: ${props => props.theme.mediaSize.lg}) {
     grid-template-columns: 0.5fr 1fr;
